@@ -1118,20 +1118,47 @@
         }
 
         function submitInquiry() {
-            const name = document.getElementById('cust-name').value;
-            const phone = document.getElementById('cust-phone').value;
-            const email = document.getElementById('cust-email').value;
+    const name = document.getElementById('cust-name').value;
+    const phone = document.getElementById('cust-phone').value;
+    const email = document.getElementById('cust-email').value;
+    const address = document.getElementById('cust-address').value;
 
-            if (!name || !phone || !email) {
-                alert("Please fill in your name, phone, and email address.");
-                return;
-            }
+    if (!name || !phone || !email) {
+        alert("Please fill in your name, phone, and email address.");
+        return;
+    }
 
-            document.getElementById('confirm-zip').innerText = calcState.zip;
-            document.getElementById('confirm-seal-price').innerText = document.getElementById('seal-price-range').innerText;
-            document.getElementById('confirm-pave-price').innerText = document.getElementById('pave-price-range').innerText;
-            document.getElementById('success-modal').classList.remove('hidden');
-        }
+    const leadPayload = {
+        name: name,
+        phone: phone,
+        email: email,
+        address: address,
+        zip: calcState.zip,
+        sqft: calcState.sizeSqFt,
+        propertyType: calcState.propertyType,
+        condition: calcState.conditionLabel,
+        sealEstimate: document.getElementById('seal-price-range').innerText,
+        paveEstimate: document.getElementById('pave-price-range').innerText,
+        submittedAt: new Date().toISOString()
+    };
+
+    try {
+        await fetch(https://boaster-mustang-pasture.ngrok-free.dev/webhook/198883d6-2b9d-4a1d-a66f-e01b62aec319, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(leadPayload)
+        });
+
+        document.getElementById('confirm-zip').innerText = calcState.zip;
+        document.getElementById('confirm-seal-price').innerText = leadPayload.sealEstimate;
+        document.getElementById('confirm-pave-price').innerText = leadPayload.paveEstimate;
+        document.getElementById('success-modal').classList.remove('hidden');
+
+    } catch (error) {
+        console.error('Submission failed:', error);
+        alert('Error dispatching your quote request. Please call (973) 222-1565.');
+    }
+}
 
         function closeSuccessModal() {
             document.getElementById('success-modal').classList.add('hidden');
