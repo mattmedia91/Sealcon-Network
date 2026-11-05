@@ -569,7 +569,7 @@
                         </div>
                         <h3 class="font-heading font-bold text-lg text-white uppercase mb-2">Material & Process</h3>
                         <p class="text-gray-400 text-xs leading-relaxed mb-4">
-                            We consult directly with crews on their application systems, equipment, and work ethic—verifying asphalt paving bedt practices. Maintenance or hot rubber fillers, sub-base compaction, and proper field application technique.
+                            We consult directly with crews on their application systems, equipment, and work ethic—verifying asphalt paving best practices. Maintenance or hot rubber fillers, sub-base compaction, and proper field application technique.
                         </p>
                         <div class="text-[11px] font-mono text-emerald-400 flex items-center gap-1.5 bg-asphalt-900 p-2 rounded border border-asphalt-border">
                             <i class="fa-solid fa-check-circle"></i>
@@ -1117,46 +1117,65 @@
             document.getElementById('summary-cond').innerText = calcState.conditionLabel;
         }
 
-        asyncfunction submitInquiry() {
-    const name = document.getElementById('cust-name').value;
-    const phone = document.getElementById('cust-phone').value;
-    const email = document.getElementById('cust-email').value;
-    const address = document.getElementById('cust-address').value;
+        function submitInquiry() {
+            const name = document.getElementById('cust-name').value;
+            const phone = document.getElementById('cust-phone').value;
+            const email = document.getElementById('cust-email').value;
+            const address = document.getElementById('cust-address').value;
 
-    if (!name || !phone || !email) {
-        alert("Please fill in your name, phone, and email address.");
-        return;
-    }
+            if (!name || !phone || !email) {
+                alert("Please fill in your name, phone, and email address.");
+                return;
+            }
 
-    const leadPayload = {
-        name: name,
-        phone: phone,
-        email: email,
-        address: address,
-        zip: calcState.zip,
-        sqft: calcState.sizeSqFt,
-        propertyType: calcState.propertyType,
-        condition: calcState.conditionLabel,
-        sealEstimate: document.getElementById('seal-price-range').innerText,
-        paveEstimate: document.getElementById('pave-price-range').innerText,
-        submittedAt: new Date().toISOString()
-    };
-async
-    fetch('https://boaster-mustang-pasture.ngrok-free.dev/webhook/198883d6-2b9d-4a1d-a66f-e01b62aec319', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(leadPayload)
-})
-.then(response => {
-    document.getElementById('confirm-zip').innerText = calcState.zip;
-    document.getElementById('confirm-seal-price').innerText = leadPayload.sealEstimate;
-    document.getElementById('confirm-pave-price').innerText = leadPayload.paveEstimate;
-    document.getElementById('success-modal').classList.remove('hidden');
-})
-.catch(error => {
-    console.error('Submission failed:', error);
-    alert('Error dispatching your quote request. Please call (973) 222-1565.');
-});
+            const leadPayload = {
+                name: name,
+                phone: phone,
+                email: email,
+                address: address,
+                zip: calcState.zip,
+                sqft: calcState.sizeSqFt,
+                propertyType: calcState.propertyType,
+                condition: calcState.conditionLabel,
+                sealEstimate: document.getElementById('seal-price-range').innerText,
+                paveEstimate: document.getElementById('pave-price-range').innerText,
+                submittedAt: new Date().toISOString()
+            };
+
+            fetch('https://boaster-mustang-pasture.ngrok-free.dev/webhook/198883d6-2b9d-4a1d-a66f-e01b62aec319', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(leadPayload)
+            })
+            .then(response => {
+                document.getElementById('confirm-zip').innerText = calcState.zip;
+                document.getElementById('confirm-seal-price').innerText = leadPayload.sealEstimate;
+                document.getElementById('confirm-pave-price').innerText = leadPayload.paveEstimate;
+                document.getElementById('success-modal').classList.remove('hidden');
+            })
+            .catch(error => {
+                console.error('Submission failed:', error);
+                alert('Error dispatching your quote request. Please call (973) 222-1565.');
+            });
+        }
+
+        function closeSuccessModal() {
+            document.getElementById('success-modal').classList.add('hidden');
+        }
+
+        function openContractorModal() {
+            document.getElementById('contractor-modal').classList.remove('hidden');
+        }
+
+        function closeContractorModal() {
+            document.getElementById('contractor-modal').classList.add('hidden');
+        }
+
+        function submitContractorApp(e) {
+            e.preventDefault();
+            alert('Contractor application submitted successfully! Our automated vetting engine is reviewing your profile.');
+            closeContractorModal();
+        }
     </script>
 </body>
 </html>
