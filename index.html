@@ -1146,10 +1146,13 @@
             };
 
             fetch('https://boaster-mustang-pasture.ngrok-free.dev/webhook/client-application', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(leadPayload)
-            })
+    method: 'POST',
+    headers: { 
+        'Content-Type': 'application/json',
+        'ngrok-skip-browser-warning': 'true'
+    },
+    body: JSON.stringify(leadPayload)
+})
             .then(response => {
                 document.getElementById('confirm-zip').innerText = calcState.zip;
                 document.getElementById('confirm-seal-price').innerText = leadPayload.sealEstimate;
