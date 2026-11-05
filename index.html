@@ -1145,7 +1145,7 @@
                 submittedAt: new Date().toISOString()
             };
 
-            fetch('https://boaster-mustang-pasture.ngrok-free.dev/webhook/http://localhost:5678/webhook/client-application', {
+            fetch('https://boaster-mustang-pasture.ngrok-free.dev/webhook/client-application', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(leadPayload)
