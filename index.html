@@ -1142,42 +1142,21 @@
         submittedAt: new Date().toISOString()
     };
 async
-    try {
-        await fetch('https://boaster-mustang-pasture.ngrok-free.dev/webhook/198883d6-2b9d-4a1d-a66f-e01b62aec319', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(leadPayload)
-        });
-
-        document.getElementById('confirm-zip').innerText = calcState.zip;
-        document.getElementById('confirm-seal-price').innerText = leadPayload.sealEstimate;
-        document.getElementById('confirm-pave-price').innerText = leadPayload.paveEstimate;
-        document.getElementById('success-modal').classList.remove('hidden');
-
-    } catch (error) {
-        console.error('Submission failed:', error);
-        alert('Error dispatching your quote request. Please call (973) 222-1565.');
-    }
-}
-
-        function closeSuccessModal() {
-            document.getElementById('success-modal').classList.add('hidden');
-            nextStep(1);
-        }
-
-        function openContractorModal() {
-            document.getElementById('contractor-modal').classList.remove('hidden');
-        }
-
-        function closeContractorModal() {
-            document.getElementById('contractor-modal').classList.add('hidden');
-        }
-
-        function submitContractorApp(e) {
-            e.preventDefault();
-            alert("Contractor Application Received! Our vetting engine will verify your Google Maps profile and contact you within 24 hours.");
-            closeContractorModal();
-        }
+    fetch('https://boaster-mustang-pasture.ngrok-free.dev/webhook/198883d6-2b9d-4a1d-a66f-e01b62aec319', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(leadPayload)
+})
+.then(response => {
+    document.getElementById('confirm-zip').innerText = calcState.zip;
+    document.getElementById('confirm-seal-price').innerText = leadPayload.sealEstimate;
+    document.getElementById('confirm-pave-price').innerText = leadPayload.paveEstimate;
+    document.getElementById('success-modal').classList.remove('hidden');
+})
+.catch(error => {
+    console.error('Submission failed:', error);
+    alert('Error dispatching your quote request. Please call (973) 222-1565.');
+});
     </script>
 </body>
 </html>
