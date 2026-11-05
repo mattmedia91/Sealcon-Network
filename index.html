@@ -1193,21 +1193,23 @@
             };
 
             // Replace this URL with your dedicated n8n Contractor Webhook URL
-            fetch('https://boaster-mustang-pasture.ngrok-free.dev/webhook/contractor-application',{
-
-                method: 'POST',
-                headers: { 
-                    'Content-Type': 'application/json',
-                    'ngrok-skip-browser-warning': 'true' 
-                },
-                body: JSON.stringify(contractorPayload)
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Server returned status ' + response.status);
-                }
-                return response.json();
-            })
+            fetch('https://boaster-mustang-pasture.ngrok-free.dev/webhook/contractor-application', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'ngrok-skip-browser-warning': 'true'
+  },
+  body: JSON.stringify(contractorPayload)
+}).then(response => {
+  if (!response.ok) {
+    throw new Error('Server returned status ' + response.status);
+  }
+  return response.json();
+}).then(data => {
+  console.log('Success:', data);
+}).catch(error => {
+  console.error('Contractor submission failed:', error);
+});
             .then(data => {
                 alert('Contractor application submitted successfully! Our automated vetting engine is reviewing your profile.');
                 closeContractorModal();
