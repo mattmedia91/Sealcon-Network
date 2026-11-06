@@ -1207,19 +1207,13 @@
   return response.json();
 }).then(data => {
   console.log('Success:', data);
-}).catch(error => {
-  console.error('Contractor submission failed:', error);
-});
-            .then(data => {
-                alert('Contractor application submitted successfully! Our automated vetting engine is reviewing your profile.');
-                closeContractorModal();
-                e.target.reset();
-            })
-            .catch(error => {
-                console.error('Contractor submission failed:', error);
-                alert('Error submitting application. Please try again or call directly.');
-            });
-        }
+alert('Contractor application submitted successfully!.')
+closeContractorModal();
+e.target.reset();
+})
+.catch(error => {
+  console.error('Contractor ubmission failed:', error);
+alert('Error submitting application. Try again or call.');
     </script>
 </body>
 </html>
