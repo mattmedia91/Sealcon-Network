@@ -292,26 +292,25 @@
                             <form id="calc-form" onsubmit="event.preventDefault();">
                                 
                                 <!-- STEP 1: PROPERTY TYPE & ZIP -->
-                                <div id="calc-step-1" class="step-content space-y-6">
-                                    <div>
-                                        <label class="block text-sm font-bold text-gray-200 uppercase tracking-wide mb-3">1. Select Property Type</label>
-                                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                                            <button type="button" onclick="selectPropertyType('residential', this)" class="prop-btn bg-asphalt-900 border-2 border-sealconBlue-500 text-white p-3 rounded-xl text-left hover:border-sealconBlue-500 transition-all">
-                                                <i class="fa-solid fa-house text-sealconBlue-400 text-lg mb-2 block"></i>
-                                                <div class="font-bold text-sm">Residential</div>
-                                                <div class="text-[11px] text-gray-400">Single Family Driveway</div>
-                                            </button>
-                                            <button type="button" onclick="selectPropertyType('commercial', this)" class="prop-btn bg-asphalt-900 border border-asphalt-border text-gray-300 p-3 rounded-xl text-left hover:border-sealconBlue-500 transition-all">
-                                                <i class="fa-solid fa-building text-gray-400 text-lg mb-2 block"></i>
-                                                <div class="font-bold text-sm">Commercial</div>
-                                                <div class="text-[11px] text-gray-400">Parking Lot / Plaza</div>
-                                            </button>
-                                            <button type="button" onclick="selectPropertyType('hoa', this)" class="prop-btn bg-asphalt-900 border border-asphalt-border text-gray-300 p-3 rounded-xl text-left hover:border-sealconBlue-500 transition-all">
-                                                <i class="fa-solid fa-city text-gray-400 text-lg mb-2 block"></i>
-                                                <div class="font-bold text-sm">HOA / Multi</div>
-                                                <div class="text-[11px] text-gray-400">Community Roads</div>
-                                            </button>
-                                        </div>
+                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+    <button type="button" onclick="selectPropertyType('residential', this)" class="prop-btn p-4 rounded-lg border-2 border-sealconBlue-500 bg-asphalt-900 text-left transition-all">
+        <i class="fa-solid fa-house text-sealconBlue-400 text-lg mb-2 block"></i>
+        <div class="font-bold text-sm text-white">Residential</div>
+        <div class="text-[11px] text-gray-400">Single Family Driveway</div>
+    </button>
+
+    <button type="button" onclick="selectPropertyType('commercial', this)" class="prop-btn p-4 rounded-lg border border-asphalt-border bg-asphalt-900 text-left transition-all">
+        <i class="fa-solid fa-building text-gray-400 text-lg mb-2 block"></i>
+        <div class="font-bold text-sm text-white">Commercial</div>
+        <div class="text-[11px] text-gray-400">Parking Lot / Plaza</div>
+    </button>
+
+    <button type="button" onclick="selectPropertyType('hoa', this)" class="prop-btn p-4 rounded-lg border border-asphalt-border bg-asphalt-900 text-left transition-all">
+        <i class="fa-solid fa-city text-gray-400 text-lg mb-2 block"></i>
+        <div class="font-bold text-sm text-white">HOA / Multi</div>
+        <div class="text-[11px] text-gray-400">Community Roads</div>
+    </button>
+</div>
                                     </div>
 
                                     <div>
