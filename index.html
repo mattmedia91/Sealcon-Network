@@ -183,46 +183,133 @@
         });
 
         // Step 2 Submission (Secure Asynchronous Webhook Dispatch)
-        attachFastTouchHandler('btn-submit-form', () => {
-            const nameVal = document.getElementById('input-name').value.trim();
-            const phoneVal = document.getElementById('input-phone').value.trim();
-            const zipVal = document.getElementById('input-zip').value.trim();
+        
+        function submitInquiry() {
+            const name = document.getElementById('cust-name').value;
+            const phone = document.getElementById('cust-phone').value;
+            const email = document.getElementById('cust-email').value;
+            const address = document.getElementById('cust-address').value;
 
-            if (!nameVal || !phoneVal) {
-                alert('Please enter your contact details.');
+            if (!name || !phone || !email) {
+                alert("Please fill in your name, phone, and email address.");
                 return;
             }
 
-            const payload = {
-                name: nameVal,
-                phone: phoneVal,
-                zip: zipVal,
+            const leadPayload = {
+                name: name,
+                phone: phone,
+                email: email,
+                address: address,
+                zip: calcState.zip,
+                sqft: calcState.sizeSqFt,
+                propertyType: calcState.propertyType,
+                condition: calcState.conditionLabel,
+                sealEstimate: document.getElementById('seal-price-range').innerText,
+                paveEstimate: document.getElementById('pave-price-range').innerText,
                 submittedAt: new Date().toISOString()
             };
 
             fetch('https://boaster-mustang-pasture.ngrok-free.dev/webhook/client-application', {
+    method: 'POST',
+    headers: { 
+        'Content-Type': 'application/json',
+        'ngrok-skip-browser-warning': 'true'
+    },
+    body: JSON.stringify(leadPayload)
+})
+            .then(response => {
+                document.getElementById('confirm-zip').innerText = calcState.zip;
+                document.getElementById('confirm-seal-price').innerText = leadPayload.sealEstimate;
+                document.getElementById('confirm-pave-price').innerText = leadPayload.paveEstimate;
+                document.getElementById('success-modal').classList.remove('hidden');
+            })
+            .catch(error => {
+                console.error('Submission failed:', error);
+                alert('Error dispatching your quote request. Please call (973) 222-1565.');
+            });
+        }
+
+        function closeSuccessModal() {
+            document.getElementById('success-modal').classList.add('hidden');
+        }
+
+        function openContractorModal() {
+            document.getElementById('contractor-modal').classList.remove('hidden');
+        }
+
+        function closeContractorModal() {
+            document.getElementById('contractor-modal').classList.add('hidden');
+        }
+
+        function submitContractorApp(e) {
+            e.preventDefault();
+
+            const formInputs = e.target.elements;
+            const contractorPayload = {
+                companyName: formInputs[0].value,
+                ownerName: formInputs[1].value,
+                phone: formInputs[2].value,
+                googleMapsUrl: formInputs[3].value,
+                baseZip: formInputs[4].value,
+                serviceRadius: formInputs[5].value,
+                submittedAt: new Date().toISOString()
+            };
+
+            fetch('https://boaster-mustang-pasture.ngrok-free.dev/webhook/contractor-application', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                     'ngrok-skip-browser-warning': 'true'
                 },
-                body: JSON.stringify(payload)
+                body: JSON.stringify(contractorPayload)
             })
             .then(response => {
                 if (!response.ok) {
-                    throw new Error('HTTP Status Error: ' + response.status);
+                    throw new Error('Server returned status ' + response.status);
                 }
                 return response.json();
             })
             .then(data => {
-                alert('Quote request dispatched successfully!');
-                location.reload();
+                console.log('Success:', data);
+                alert('Contractor application submitted successfully! Our automated vetting engine is reviewing your profile.');
+                closeContractorModal();
+                e.target.reset();
             })
             .catch(error => {
-                console.error('Submission execution failure:', error);
-                alert('Network dispatch failure. Please check your connection.');
+                console.error('Contractor submission failed:', error);
+                alert('Error submitting application. Please try again or call directly.');
             });
-        });
+        }
+
+
+            // Replace this URL with your dedicated n8n Contractor Webhook URL
+            fetch('https://boaster-mustang-pasture.ngrok-free.dev/webhook/contractor-application', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'ngrok-skip-browser-warning': 'true'
+  },
+  body: JSON.stringify(contractorPayload)
+}).then(response => {
+  if (!response.ok) {
+    throw new Error('Server returned status ' + response.status);
+  }
+  return response.json();
+}).then(data => {
+  console.log('Success:', data);
+}).catch(error => {
+  console.error('Contractor submission failed:', error);
+});
+            .then(data => {
+                alert('Contractor application submitted successfully! Our automated vetting engine is reviewing your profile.');
+                closeContractorModal();
+                e.target.reset();
+            })
+            .catch(error => {
+                console.error('Contractor submission failed:', error);
+                alert('Error submitting application. Please try again or call directly.');
+            });
+        }
     </script>
 </body>
 </html>
