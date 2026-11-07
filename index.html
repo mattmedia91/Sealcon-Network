@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;0,900;1,800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <script>
         tailwind.config = {
             theme: {
@@ -53,47 +54,52 @@
             background-image: radial-gradient(rgba(2, 132, 199, 0.05) 1px, transparent 0);
             background-size: 32px 32px;
         }
+        
         .font-heading {
             font-family: 'Montserrat', sans-serif;
         }
+        
         .asphalt-card {
             background: linear-gradient(145deg, rgba(17, 24, 39, 0.95), rgba(11, 15, 23, 0.98));
             border: 1px solid rgba(2, 132, 199, 0.2);
             backdrop-filter: blur(12px);
         }
+        
         .asphalt-card:hover {
             border-color: rgba(2, 132, 199, 0.5);
         }
+        
         .blue-glow {
             box-shadow: 0 0 25px rgba(2, 132, 199, 0.3);
         }
+        
         .orange-glow {
             box-shadow: 0 0 20px rgba(249, 115, 22, 0.25);
         }
+        
         .hazard-stripe {
-            background: repeating-linear-gradient(
-                -45deg,
-                #0284C7,
-                #0284C7 12px,
-                #111827 12px,
-                #111827 24px
-            );
+            background: repeating-linear-gradient( -45deg, #0284C7, #0284C7 12px, #111827 12px, #111827 24px);
         }
-        ::-webkit-scrollbar {
+        
+         ::-webkit-scrollbar {
             width: 8px;
         }
-        ::-webkit-scrollbar-track {
+        
+         ::-webkit-scrollbar-track {
             background: #0B0F17;
         }
-        ::-webkit-scrollbar-thumb {
+        
+         ::-webkit-scrollbar-thumb {
             background: #1F2937;
             border-radius: 4px;
         }
-        ::-webkit-scrollbar-thumb:hover {
+        
+         ::-webkit-scrollbar-thumb:hover {
             background: #0284C7;
         }
     </style>
 </head>
+
 <body class="antialiased text-gray-100 flex flex-col min-h-screen">
 
     <!-- TOP ANNOUNCEMENT BAR -->
@@ -107,7 +113,7 @@
     <!-- HEADER NAVIGATION -->
     <header class="sticky top-0 z-40 bg-asphalt-900/95 backdrop-blur-md border-b border-asphalt-border">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            
+
             <!-- LOGO BADGE -->
             <a href="#" class="flex items-center gap-3 group">
                 <div class="w-11 h-11 bg-sealconBlue-500 rounded-lg flex items-center justify-center font-heading font-black text-white text-2xl shadow-lg transform group-hover:rotate-3 transition-transform">
@@ -149,17 +155,16 @@
         <section class="relative pt-12 pb-20 lg:pt-20 lg:pb-28 overflow-hidden">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="grid lg:grid-cols-12 gap-12 items-center">
-                    
+
                     <!-- HERO TEXT -->
                     <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
                         <div class="inline-flex items-center gap-2 bg-asphalt-800 border border-sealconBlue-500/40 px-3 py-1.5 rounded-full text-xs font-semibold text-sealconBlue-400">
                             <i class="fa-solid fa-user-check text-sealconOrange-500"></i>
                             <span>Screened Pros Only</span>
                         </div>
-                        
+
                         <h1 class="font-heading font-black text-4xl sm:text-5xl lg:text-6xl tracking-tight text-white uppercase leading-none">
-                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-sealconBlue-400 via-sky-300 to-sealconBlue-500">Driveway Paving & Sealcoating</span><br/>
-                            Across USA.
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-sealconBlue-400 via-sky-300 to-sealconBlue-500">Driveway Paving & Sealcoating</span><br/> Across USA.
                         </h1>
 
                         <p class="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-normal">
@@ -258,7 +263,7 @@
         <!-- MULTI-STEP DRIVEWAY QUOTE CALCULATOR -->
         <section id="quote-calculator" class="py-16 bg-asphalt-800/60 border-y border-asphalt-border relative">
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                
+
                 <div class="text-center max-w-3xl mx-auto mb-10">
                     <div class="inline-block bg-sealconBlue-500/10 border border-sealconBlue-500/30 text-sealconBlue-400 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-2">
                         Instant Pricing Estimator
@@ -273,7 +278,7 @@
 
                 <!-- CALCULATOR CONTAINER -->
                 <div class="asphalt-card rounded-2xl p-6 sm:p-8 shadow-2xl relative">
-                    
+
                     <!-- PROGRESS BAR -->
                     <div class="mb-8">
                         <div class="flex justify-between text-xs font-bold text-gray-400 uppercase mb-2">
@@ -286,11 +291,11 @@
                     </div>
 
                     <div class="grid lg:grid-cols-12 gap-8">
-                        
+
                         <!-- FORM STEPS AREA -->
                         <div class="lg:col-span-7">
                             <form id="calc-form" onsubmit="event.preventDefault();">
-                                
+
                                 <!-- STEP 1: PROPERTY TYPE & ZIP -->
                                 <div id="calc-step-1" class="step-content space-y-6">
                                     <div>
@@ -469,7 +474,7 @@
                         <div class="lg:col-span-5 border-t lg:border-t-0 lg:border-l border-asphalt-border pt-6 lg:pt-0 lg:pl-8 flex flex-col justify-between">
                             <div>
                                 <div class="bg-asphalt-900 rounded-xl p-5 border border-sealconBlue-500/30 space-y-4">
-                                    
+
                                     <!-- SEALCOATING RANGE -->
                                     <div>
                                         <div class="text-[10px] font-bold text-sealconBlue-400 uppercase tracking-widest">Protective Sealcoating Range</div>
@@ -535,7 +540,7 @@
         <!-- CONTRACTOR VETTING PIPELINE ENGINE VISUALIZER -->
         <section id="vetting-standard" class="py-20 bg-asphalt-900 relative">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                
+
                 <div class="text-center max-w-3xl mx-auto mb-16">
                     <h2 class="font-heading font-black text-3xl sm:text-4xl text-white uppercase tracking-tight">
                         How We Screen Local Contractors
@@ -547,7 +552,7 @@
 
                 <!-- 4-STEP VETTING GRID -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    
+
                     <div class="asphalt-card rounded-2xl p-6 relative group border border-asphalt-border hover:border-sealconBlue-500/50 transition-all">
                         <div class="w-12 h-12 rounded-xl bg-sealconBlue-500/10 border border-sealconBlue-500/30 text-sealconBlue-400 flex items-center justify-center font-heading font-black text-xl mb-4 group-hover:bg-sealconBlue-500 group-hover:text-white transition-all">
                             01
@@ -613,7 +618,7 @@
         <!-- WHY SEALCON VALUE PROPOSITION GRID -->
         <section id="how-it-works" class="py-20 bg-asphalt-800/40 border-t border-asphalt-border">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                
+
                 <div class="text-center max-w-3xl mx-auto mb-16">
                     <h2 class="font-heading font-black text-3xl sm:text-4xl text-white uppercase">
                         The Sealcon Advantage
@@ -624,7 +629,7 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    
+
                     <div class="asphalt-card rounded-2xl p-6 border border-asphalt-border flex flex-col items-start">
                         <div class="w-12 h-12 rounded-xl bg-sealconBlue-500/10 border border-sealconBlue-500/30 text-sealconBlue-400 flex items-center justify-center text-xl mb-4">
                             <i class="fa-solid fa-road"></i>
@@ -675,7 +680,7 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="asphalt-card rounded-3xl p-8 sm:p-12 border border-sealconBlue-500/30 shadow-2xl bg-gradient-to-br from-asphalt-800 to-asphalt-900">
                     <div class="grid lg:grid-cols-12 gap-10 items-center">
-                        
+
                         <div class="lg:col-span-7 space-y-6">
                             <div class="inline-block bg-sealconBlue-500 text-white font-heading font-black text-xs px-3 py-1 rounded-full uppercase tracking-wider">
                                 Contractor Partner Portal
@@ -748,9 +753,9 @@
         <!-- NATIONWIDE COVERAGE MAP & TESTIMONIALS -->
         <section id="coverage-map" class="py-20 bg-asphalt-800/30 border-t border-asphalt-border">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                
+
                 <div class="grid lg:grid-cols-12 gap-12 items-center">
-                    
+
                     <!-- COVERAGE SEARCH -->
                     <div class="lg:col-span-5 space-y-6">
                         <div class="inline-block bg-sealconBlue-500/10 border border-sealconBlue-500/30 text-sealconBlue-400 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
@@ -784,7 +789,7 @@
                         </h3>
 
                         <div class="grid sm:grid-cols-2 gap-4">
-                            
+
                             <div class="asphalt-card rounded-xl p-5 border border-asphalt-border">
                                 <div class="flex text-sealconOrange-500 text-xs gap-1 mb-2">
                                     <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
@@ -819,7 +824,7 @@
     <footer class="bg-asphalt-900 border-t border-asphalt-border pt-12 pb-8 text-xs text-gray-400">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-                
+
                 <div class="space-y-3">
                     <div class="flex items-center gap-2">
                         <div class="w-7 h-7 bg-sealconBlue-500 rounded font-heading font-black text-white flex items-center justify-center text-base">S</div>
@@ -971,16 +976,39 @@
             conditionLabel: 'Good (1.0x)'
         };
 
-        const statesData = [
-            { name: 'New Jersey (NJ)', activePros: 42, status: 'Active Network' },
-            { name: 'North Carolina (NC)', activePros: 38, status: 'Active Network' },
-            { name: 'Ohio (OH)', activePros: 29, status: 'Active Network' },
-            { name: 'Pennsylvania (PA)', activePros: 35, status: 'Active Network' },
-            { name: 'Virginia (VA)', activePros: 24, status: 'Active Network' },
-            { name: 'Florida (FL)', activePros: 51, status: 'Active Network' },
-            { name: 'Texas (TX)', activePros: 47, status: 'Active Network' },
-            { name: 'Georgia (GA)', activePros: 22, status: 'Active Network' }
-        ];
+        const statesData = [{
+            name: 'New Jersey (NJ)',
+            activePros: 42,
+            status: 'Active Network'
+        }, {
+            name: 'North Carolina (NC)',
+            activePros: 38,
+            status: 'Active Network'
+        }, {
+            name: 'Ohio (OH)',
+            activePros: 29,
+            status: 'Active Network'
+        }, {
+            name: 'Pennsylvania (PA)',
+            activePros: 35,
+            status: 'Active Network'
+        }, {
+            name: 'Virginia (VA)',
+            activePros: 24,
+            status: 'Active Network'
+        }, {
+            name: 'Florida (FL)',
+            activePros: 51,
+            status: 'Active Network'
+        }, {
+            name: 'Texas (TX)',
+            activePros: 47,
+            status: 'Active Network'
+        }, {
+            name: 'Georgia (GA)',
+            activePros: 22,
+            status: 'Active Network'
+        }];
 
         window.onload = function() {
             renderStateList(statesData);
@@ -1052,7 +1080,7 @@
 
             document.getElementById('sqft-slider').value = sqft;
             document.getElementById('sqft-display').innerText = `${sqft.toLocaleString()} Sq Ft`;
-            
+
             calculateEstimate();
         }
 
@@ -1087,7 +1115,7 @@
             let baseSealRate = 0.45;
             if (sqft > 1000) {
                 const scaleFactor = Math.min((sqft - 1000) / 49000, 1);
-                baseSealRate = 0.45 - (scaleFactor * 0.23); 
+                baseSealRate = 0.45 - (scaleFactor * 0.23);
             }
             if (calcState.propertyType === 'commercial' && baseSealRate > 0.25) {
                 baseSealRate = 0.22;
@@ -1118,42 +1146,42 @@
         }
 
         function submitInquiry() {
-    const name = document.getElementById('cust-name')?.value || '';
-    const phone = document.getElementById('cust-phone')?.value || '';
-    const email = document.getElementById('cust-email')?.value || '';
+            const name = document.getElementById('cust-name') ? .value || '';
+            const phone = document.getElementById('cust-phone') ? .value || '';
+            const email = document.getElementById('cust-email') ? .value || '';
 
-    if (!name || !phone || !email) {
-        alert("Please fill in your name, phone, and email");
-        return;
-    }
+            if (!name || !phone || !email) {
+                alert("Please fill in your name, phone, and email");
+                return;
+            }
 
-    const clientPayload = {
-        name: name,
-        phone: phone,
-        email: email,
-        zipCode: document.getElementById('confirm-zip')?.innerText || '',
-        sealcoatingEstimate: document.getElementById('confirm-seal-price')?.innerText || '',
-        replacementEstimate: document.getElementById('confirm-pave-price')?.innerText || '',
-        submittedAt: new Date().toISOString()
-    };
+            const clientPayload = {
+                name: name,
+                phone: phone,
+                email: email,
+                zipCode: document.getElementById('confirm-zip') ? .innerText || '',
+                sealcoatingEstimate: document.getElementById('confirm-seal-price') ? .innerText || '',
+                replacementEstimate: document.getElementById('confirm-pave-price') ? .innerText || '',
+                submittedAt: new Date().toISOString()
+            };
 
-    fetch('https://boaster-mustang-pasture.ngrok-free.dev/webhook/client-application', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'ngrok-skip-browser-warning': 'true'
-        },
-        body: JSON.stringify(clientPayload)
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log('Client lead dispatched to n8n:', data);
-        const successModal = document.getElementById('success-modal');
-        if (successModal) successModal.classList.remove('hidden');
-    })
-    .catch(error => console.error('Webhook error:', error));
-}
-        
+            fetch('https://boaster-mustang-pasture.ngrok-free.dev/webhook/client-application', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'ngrok-skip-browser-warning': 'true'
+                    },
+                    body: JSON.stringify(clientPayload)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Client lead dispatched to n8n:', data);
+                    const successModal = document.getElementById('success-modal');
+                    if (successModal) successModal.classList.remove('hidden');
+                })
+                .catch(error => console.error('Webhook error:', error));
+        }
+
         function closeSuccessModal() {
             document.getElementById('success-modal').classList.add('hidden');
             nextStep(1);
@@ -1168,40 +1196,41 @@
         }
 
         function submitContractorApp(e) {
-    e.preventDefault();
+            e.preventDefault();
 
-    const formInputs = e.target.elements;
-    const contractorPayload = {
-        companyName: formInputs[0].value,
-        ownerName: formInputs[1].value,
-        phone: formInputs[2].value,
-        googleMapsUrl: formInputs[3].value,
-        baseZip: formInputs[4].value,
-        serviceRadius: formInputs[5].value,
-        submittedAt: new Date().toISOString()
-    };
+            const formInputs = e.target.elements;
+            const contractorPayload = {
+                companyName: formInputs[0].value,
+                ownerName: formInputs[1].value,
+                phone: formInputs[2].value,
+                googleMapsUrl: formInputs[3].value,
+                baseZip: formInputs[4].value,
+                serviceRadius: formInputs[5].value,
+                submittedAt: new Date().toISOString()
+            };
 
-    fetch('https://boaster-mustang-pasture.ngrok-free.dev/webhook/contractor-application', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'ngrok-skip-browser-warning': 'true'
-        },
-        body: JSON.stringify(contractorPayload)
-    })
-    .then(response => {
-        if (!response.ok) throw new Error('Server status ' + response.status);
-        return response.json();
-    })
-    .then(data => {
-        console.log('Success:', data);
-        closeContractorModal();
-        e.target.reset();
-    })
-    .catch(error => {
-        console.error('Contractor submission failed:', error);
-    });
-}
+            fetch('https://boaster-mustang-pasture.ngrok-free.dev/webhook/contractor-application', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'ngrok-skip-browser-warning': 'true'
+                    },
+                    body: JSON.stringify(contractorPayload)
+                })
+                .then(response => {
+                    if (!response.ok) throw new Error('Server status ' + response.status);
+                    return response.json();
+                })
+                .then(data => {
+                    console.log('Success:', data);
+                    closeContractorModal();
+                    e.target.reset();
+                })
+                .catch(error => {
+                    console.error('Contractor submission failed:', error);
+                });
+        }
     </script>
 </body>
+
 </html>
