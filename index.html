@@ -1177,43 +1177,45 @@
         }
 
         function submitContractorApp(e) {
-            e.preventDefault();
+        e.preventDefault();
 
-            // Grab values from the contractor modal inputs
-            const formInputs = e.target.elements;
-            const contractorPayload = {
-                companyName: formInputs[0].value,
-                ownerName: formInputs[1].value,
-                phone: formInputs[2].value,
-                googleMapsUrl: formInputs[3].value,
-                baseZip: formInputs[4].value,
-                serviceRadius: formInputs[5].value,
-                submittedAt: new Date().toISOString()
-            };
+        const formInputs = e.target.elements;
+        const contractorPayload = {
+            companyName: formInputs[0].value,
+            ownerName: formInputs[1].value,
+            phone: formInputs[2].value,
+            googleMapsUrl: formInputs[3].value,
+            baseZip: formInputs[4].value,
+            serviceRadius: formInputs[5].value,
+            submittedAt: new Date().toISOString()
+        };
 
-            // Replace this URL with your dedicated n8n Contractor Webhook URL
-            fetch('https://boaster-mustang-pasture.ngrok-free.dev/webhook/contractor-application', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-    'ngrok-skip-browser-warning': 'true'
-  },
-  body: JSON.stringify(contractorPayload)
-}).then(response => {
-  if (!response.ok) {
-    throw new Error('Server returned status ' + response.status);
-  }
-  return response.json();
-}).then(data => {
-  console.log('Success:', data);
-alert('Contractor application submitted successfully!.')
-closeContractorModal();
-e.target.reset();
-});
-.catch(error => {
-  console.error('Contractor ubmission failed:', error);
-alert('Error submitting application. Try again or call.'});
-        }
-    </script>
+        fetch('https://boaster-mustang-pasture.ngrok-free.dev/webhook/contractor-application', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'ngrok-skip-browser-warning': 'true'
+            },
+            body: JSON.stringify(contractorPayload)
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Server returned status ' + response.status);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Success:', data);
+            alert('Contractor application submitted successfully! Our automated vetting engine is reviewing your profile.');
+            closeContractorModal();
+            e.target.reset();
+        })
+        .catch(error => {
+            console.error('Contractor submission failed:', error);
+            alert('Error submitting application. Please try again or call directly.');
+        });
+    }
+</script>
+
 </body>
 </html>
