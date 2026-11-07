@@ -1146,41 +1146,56 @@
         }
 
         function submitInquiry() {
-            const name = document.getElementById('cust-name') ? .value || '';
-            const phone = document.getElementById('cust-phone') ? .value || '';
-            const email = document.getElementById('cust-email') ? .value || '';
+    const name = document.getElementById('cust-name')?.value || '';
+    const phone = document.getElementById('cust-phone')?.value || '';
+    const email = document.getElementById('cust-email')?.value || '';
 
-            if (!name || !phone || !email) {
-                alert("Please fill in your name, phone, and email");
-                return;
-            }
+    if (!name || !phone || !email) {
+        alert("Please fill in your name, phone, and email");
+        return;
+    }
 
-            const clientPayload = {
-                name: name,
-                phone: phone,
-                email: email,
-                zipCode: document.getElementById('confirm-zip') ? .innerText || '',
-                sealcoatingEstimate: document.getElementById('confirm-seal-price') ? .innerText || '',
-                replacementEstimate: document.getElementById('confirm-pave-price') ? .innerText || '',
-                submittedAt: new Date().toISOString()
-            };
+    // Pull directly from the active calculation display elements on the screen
+    const sealVal = document.getElementById('seal-price-range')?.innerText || document.getElementById('confirm-seal-price')?.innerText || '$0';
+    const paveVal = document.getElementById('pave-price-range')?.innerText || document.getElementById('confirm-pave-price')?.innerText || '$0';
+    const sqftVal = document.getElementById('summary-sqft')?.innerText || document.getElementById('sqft')?.value || document.getElementById('sqftInput')?.value || '1000';
+    const zipVal = document.getElementById('summary-zip')?.innerText || document.getElementById('calc-zip')?.value || document.getElementById('zip')?.value || document.getElementById('confirm-zip')?.innerText || '07461';
 
-            fetch('https://boaster-mustang-pasture.ngrok-free.dev/webhook/client-application', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'ngrok-skip-browser-warning': 'true'
-                    },
-                    body: JSON.stringify(clientPayload)
-                })
-                .then(response => response.json())
-                .then(data => {
-                    console.log('Client lead dispatched to n8n:', data);
-                    const successModal = document.getElementById('success-modal');
-                    if (successModal) successModal.classList.remove('hidden');
-                })
-                .catch(error => console.error('Webhook error:', error));
-        }
+    const clientPayload = {
+        name: name,
+        phone: phone,
+        email: email,
+        sqft: sqftVal,
+        zipCode: zipVal,
+        sealcoatingEstimate: sealVal,
+        replacementEstimate: paveVal,
+        submittedAt: new Date().toISOString()
+    };
+
+    fetch('https://boaster-mustang-pasture.ngrok-free.dev/webhook/client-application', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'ngrok-skip-browser-warning': 'true'
+        },
+        body: JSON.stringify(clientPayload)
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Client lead dispatched to n8n:', data);
+        
+        // Populate the success modal text dynamically
+        const modalSeal = document.getElementById('confirm-seal-price');
+        if (modalSeal) modalSeal.innerText = sealVal;
+        
+        const modalPave = document.getElementById('confirm-pave-price');
+        if (modalPave) modalPave.innerText = paveVal;
+
+        const successModal = document.getElementById('success-modal');
+        if (successModal) successModal.classList.remove('hidden');
+    })
+    .catch(error => console.error('Webhook error:', error));
+}
 
         function closeSuccessModal() {
             document.getElementById('success-modal').classList.add('hidden');
