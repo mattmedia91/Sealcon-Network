@@ -1132,7 +1132,46 @@
             document.getElementById('confirm-pave-price').innerText = document.getElementById('pave-price-range').innerText;
             document.getElementById('success-modal').classList.remove('hidden');
         }
+function submitInquiry() {
+    const name = document.getElementById('cust-name').value;
+    const phone = document.getElementById('cust-phone').value;
+    const email = document.getElementById('cust-email').value;
 
+    if (!name || !phone || !email) {
+        alert("Please fill in your name, phone, and email");
+        return;
+    }
+
+    document.getElementById('confirm-zip').innerText = ...
+    document.getElementById('confirm-seal-price').innerText = ...
+    document.getElementById('confirm-pave-price').innerText = ...
+
+    // --- PASTE YOUR WEBHOOK PAYLOAD HERE ---
+    const clientPayload = {
+        name: name,
+        phone: phone,
+        email: email,
+        zipCode: document.getElementById('confirm-zip')?.innerText || '',
+        sealcoatingEstimate: document.getElementById('confirm-seal-price')?.innerText || '',
+        replacementEstimate: document.getElementById('confirm-pave-price')?.innerText || '',
+        submittedAt: new Date().toISOString()
+    };
+
+    fetch('https://boaster-mustang-pasture.ngrok-free.dev/webhook/client-application', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'ngrok-skip-browser-warning': 'true'
+        },
+        body: JSON.stringify(clientPayload)
+    })
+    .then(response => response.json())
+    .then(data => console.log('Client lead dispatched to n8n:', data))
+    .catch(error => console.error('Webhook error:', error));
+    // ----------------------------------------
+
+    document.getElementById('success-modal').classList.remove('hidden'); // (or whatever your modal toggle is)
+}
         function closeSuccessModal() {
             document.getElementById('success-modal').classList.add('hidden');
             nextStep(1);
