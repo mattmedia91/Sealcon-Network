@@ -1118,41 +1118,21 @@
         }
 
         function submitInquiry() {
-            const name = document.getElementById('cust-name').value;
-            const phone = document.getElementById('cust-phone').value;
-            const email = document.getElementById('cust-email').value;
-
-            if (!name || !phone || !email) {
-                alert("Please fill in your name, phone, and email address.");
-                return;
-            }
-
-            document.getElementById('confirm-zip').innerText = calcState.zip;
-            document.getElementById('confirm-seal-price').innerText = document.getElementById('seal-price-range').innerText;
-            document.getElementById('confirm-pave-price').innerText = document.getElementById('pave-price-range').innerText;
-            document.getElementById('success-modal').classList.remove('hidden');
-        }
-function submitInquiry() {
-    const name = document.getElementById('cust-name').value;
-    const phone = document.getElementById('cust-phone').value;
-    const email = document.getElementById('cust-email').value;
+    const name = document.getElementById('cust-name')?.value || '';
+    const phone = document.getElementById('cust-phone')?.value || '';
+    const email = document.getElementById('cust-email')?.value || '';
 
     if (!name || !phone || !email) {
         alert("Please fill in your name, phone, and email");
         return;
     }
 
-    document.getElementById('confirm-zip').innerText = ...
-    document.getElementById('confirm-seal-price').innerText = ...
-    document.getElementById('confirm-pave-price').innerText = ...
-
-
     const clientPayload = {
         name: name,
         phone: phone,
         email: email,
         zipCode: document.getElementById('confirm-zip')?.innerText || '',
-        sealcoatingEstimate: documant.getElementById('cal-zip')?.value || document.getElementById('confirm-seal-price')?.innerText || '',
+        sealcoatingEstimate: document.getElementById('confirm-seal-price')?.innerText || '',
         replacementEstimate: document.getElementById('confirm-pave-price')?.innerText || '',
         submittedAt: new Date().toISOString()
     };
@@ -1168,8 +1148,9 @@ function submitInquiry() {
     .then(response => response.json())
     .then(data => {
         console.log('Client lead dispatched to n8n:', data);
-        document.getElementById('success-modal').classList.remove('hidden');
-})
+        const successModal = document.getElementById('success-modal');
+        if (successModal) successModal.classList.remove('hidden');
+    })
     .catch(error => console.error('Webhook error:', error));
 }
         
