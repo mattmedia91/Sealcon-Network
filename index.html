@@ -1147,10 +1147,42 @@
         }
 
         function submitContractorApp(e) {
-            e.preventDefault();
-            alert("Contractor Application Received! Our vetting engine will verify your Google Maps profile and contact you within 24 hours.");
-            closeContractorModal();
-        }
+    e.preventDefault();
+
+    const formInputs = e.target.elements;
+    const contractorPayload = {
+        companyName: formInputs[0].value,
+        ownerName: formInputs[1].value,
+        phone: formInputs[2].value,
+        googleMapsUrl: formInputs[3].value,
+        baseZip: formInputs[4].value,
+        serviceRadius: formInputs[5].value,
+        submittedAt: new Date().toISOString()
+    };
+
+    fetch('https://boaster-mustang-pasture.ngrok-free.dev/webhook/contractor-application', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'ngrok-skip-browser-warning': 'true'
+        },
+        body: JSON.stringify(contractorPayload)
+    })
+    .then(response => {
+        if (!response.ok) throw new Error('Server status ' + response.status);
+        return response.json();
+    })
+    .then(data => {
+        console.log('Success:', data);
+        alert('Contractor application submitted successfully!');
+        closeContractorModal();
+        e.target.reset();
+    })
+    .catch(error => {
+        console.error('Contractor submission failed:', error);
+        alert('Error submitting application. Try again.');
+    });
+}
     </script>
 </body>
 </html>
