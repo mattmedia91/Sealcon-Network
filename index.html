@@ -1152,7 +1152,7 @@ function submitInquiry() {
         phone: phone,
         email: email,
         zipCode: document.getElementById('confirm-zip')?.innerText || '',
-        sealcoatingEstimate: document.getElementById('confirm-seal-price')?.innerText || '',
+        sealcoatingEstimate: documant.getElementById('cal-zip')?.value || document.getElementById('confirm-seal-price')?.innerText || '',
         replacementEstimate: document.getElementById('confirm-pave-price')?.innerText || '',
         submittedAt: new Date().toISOString()
     };
@@ -1166,11 +1166,13 @@ function submitInquiry() {
         body: JSON.stringify(clientPayload)
     })
     .then(response => response.json())
-    .then(data => console.log('Client lead dispatched to n8n:', data))
+    .then(data => {
+        console.log('Client lead dispatched to n8n:', data);
+        document.getElementById('success-modal').classList.remove('hidden');
+})
     .catch(error => console.error('Webhook error:', error));
-
-    document.getElementById('success-modal').classList.remove('hidden'); // (or whatever your modal toggle is)
 }
+        
         function closeSuccessModal() {
             document.getElementById('success-modal').classList.add('hidden');
             nextStep(1);
