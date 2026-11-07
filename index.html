@@ -1174,13 +1174,11 @@
     })
     .then(data => {
         console.log('Success:', data);
-        alert('Contractor application submitted successfully!');
         closeContractorModal();
         e.target.reset();
     })
     .catch(error => {
         console.error('Contractor submission failed:', error);
-        alert('Error submitting application. Try again.');
     });
 }
     </script>
