@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sealcon Asphalt | America's Driveway Paving & Sealcoating Network</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;0,900;1,800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        asphalt: {
+                            900: '#0B0F17',
+                            800: '#111827',
+                            700: '#1F2937',
+                            600: '#374151',
+                            border: '#1F2937'
+                        },
+                        sealconBlue: {
+                            400: '#38BDF8',
+                            500: '#0284C7',
+                            600: '#0369A1',
+                            700: '#075985'
+                        },
+                        sealconOrange: {
+                            400: '#FB923C',
+                            500: '#F97316',
+                            600: '#EA580C'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0B0F17;
+            color: #F3F4F6;
+            font-family: 'Inter', sans-serif;
+            background-image: radial-gradient(rgba(2, 132, 199, 0.05) 1px, transparent 0);
+            background-size: 32px 32px;
+        }
+        .font-heading {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .asphalt-card {
+            background: linear-gradient(145deg, rgba(17, 24, 39, 0.95), rgba(11, 15, 23, 0.98));
+            border: 1px solid rgba(2, 132, 199, 0.2);
+            backdrop-filter: blur(12px);
+        }
+        .asphalt-card:hover {
+            border-color: rgba(2, 132, 199, 0.5);
+        }
+        .blue-glow {
+            box-shadow: 0 0 25px rgba(2, 132, 199, 0.3);
+        }
+        .orange-glow {
+            box-shadow: 0 0 20px rgba(249, 115, 22, 0.25);
+        }
+        .hazard-stripe {
+            background: repeating-linear-gradient(
+                -45deg,
+                #0284C7,
+                #0284C7 12px,
+                #111827 12px,
+                #111827 24px
+            );
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0B0F17;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1F2937;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0284C7;
+        }
+    </style>
+</head>
+<body class="antialiased text-gray-100 flex flex-col min-h-screen">
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="hazard-stripe h-1.5 w-full"></div>
+    <div class="bg-asphalt-800 border-b border-asphalt-border py-2 px-4 text-xs font-semibold text-center text-gray-300 flex items-center justify-center gap-2">
+        <span class="bg-sealconOrange-500 text-white text-[10px] font-black px-2 py-0.5 rounded uppercase tracking-wider">USA Network</span>
+        <span>Nationwide Paving & Sealcoating Lead & Contractor Matching Active in 48 States</span>
+        <a href="#quote-calculator" class="text-sealconBlue-400 hover:underline font-bold hidden sm:inline">Get a Quote &rarr;</a>
+    </div>
+
+    <!-- HEADER NAVIGATION -->
+    <header class="sticky top-0 z-40 bg-asphalt-900/95 backdrop-blur-md border-b border-asphalt-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- LOGO BADGE -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 bg-sealconBlue-500 rounded-lg flex items-center justify-center font-heading font-black text-white text-2xl shadow-lg transform group-hover:rotate-3 transition-transform">
+                    S
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-heading font-black text-2xl tracking-wider text-white uppercase leading-none">
+                        SEALCON<span class="text-sealconOrange-500">.US</span>
+                    </span>
+                    <span class="text-[10px] font-bold tracking-widest text-gray-400 uppercase">Asphalt Protection Network</span>
+                </div>
+            </a>
+
+            <!-- NAV LINKS -->
+            <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold tracking-wide text-gray-300">
+                <a href="#how-it-works" class="hover:text-sealconBlue-400 transition-colors">How It Works</a>
+                <a href="#vetting-standard" class="hover:text-sealconBlue-400 transition-colors">Vetting Protocol</a>
+                <a href="#coverage-map" class="hover:text-sealconBlue-400 transition-colors">Service Radius</a>
+                <a href="#for-contractors" class="hover:text-sealconBlue-400 transition-colors">For Contractors</a>
+                <a href="#reviews" class="hover:text-sealconBlue-400 transition-colors">Reviews</a>
+            </nav>
+
+            <!-- HEADER CTAs -->
+            <div class="flex items-center gap-4">
+                <a href="tel:18005557325" class="hidden md:flex items-center gap-2 bg-asphalt-800 border border-asphalt-border hover:border-sealconBlue-500 px-3 py-2 rounded-lg text-xs font-bold text-gray-200 transition-colors">
+                    <i class="fa-solid fa-phone text-sealconOrange-500"></i>
+                    <span>1-800-SEALCON</span>
+                </a>
+                <a href="#quote-calculator" class="bg-sealconOrange-500 hover:bg-sealconOrange-600 text-white font-heading font-bold text-xs sm:text-sm px-4 py-2.5 rounded-lg shadow-md hover:shadow-sealconOrange-500/20 transition-all uppercase tracking-wide">
+                    Get a Quote
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+
+        <!-- HERO SECTION -->
+        <section class="relative pt-12 pb-20 lg:pt-20 lg:pb-28 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- HERO TEXT -->
+                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                        <div class="inline-flex items-center gap-2 bg-asphalt-800 border border-sealconBlue-500/40 px-3 py-1.5 rounded-full text-xs font-semibold text-sealconBlue-400">
+                            <i class="fa-solid fa-user-check text-sealconOrange-500"></i>
+                            <span>Screened Pros Only</span>
+                        </div>
+                        
+                        <h1 class="font-heading font-black text-4xl sm:text-5xl lg:text-6xl tracking-tight text-white uppercase leading-none">
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-sealconBlue-400 via-sky-300 to-sealconBlue-500">Driveway Paving & Sealcoating</span><br/>
+                            Across USA.
+                        </h1>
+
+                        <p class="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-normal">
+                            Sealcon Asphalt connects homeowners and commercial property managers nationwide with top-rated, rigorously vetted local paving and sealcoating specialists. Get fast quotes, verified 4.5+ star pros, and guaranteed workmanship.
+                        </p>
+
+                        <!-- DUAL HERO CTAS -->
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                            <a href="#quote-calculator" class="w-full sm:w-auto text-center bg-sealconOrange-500 hover:bg-sealconOrange-600 text-white font-heading font-extrabold px-8 py-4 rounded-xl text-base shadow-lg orange-glow transition-all uppercase tracking-wider flex items-center justify-center gap-3">
+                                <i class="fa-solid fa-calculator"></i>
+                                <span>Get a Quote</span>
+                            </a>
+                            <button onclick="openContractorModal()" class="w-full sm:w-auto text-center bg-asphalt-800 hover:bg-asphalt-700 text-gray-200 border border-asphalt-border hover:border-sealconBlue-500/50 font-heading font-bold px-6 py-4 rounded-xl text-base transition-all flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-truck-monster text-sealconBlue-400"></i>
+                                <span>Join Contractor Network</span>
+                            </button>
+                        </div>
+
+                        <!-- TRUST BADGES -->
+                        <div class="pt-6 grid grid-cols-3 gap-4 border-t border-asphalt-border/60 max-w-xl mx-auto lg:mx-0">
+                            <div class="flex flex-col items-center lg:items-start">
+                                <div class="flex items-center gap-1 text-sealconOrange-500 font-bold text-lg">
+                                    <i class="fa-solid fa-star"></i>
+                                    <span>4.8 / 5.0</span>
+                                </div>
+                                <span class="text-xs text-gray-400">Avg Pro Rating</span>
+                            </div>
+                            <div class="flex flex-col items-center lg:items-start">
+                                <div class="text-white font-bold text-lg flex items-center gap-1">
+                                    <i class="fa-solid fa-user-check text-sealconBlue-400"></i>
+                                    <span>100% Vetted</span>
+                                </div>
+                                <span class="text-xs text-gray-400">Licensed & Insured</span>
+                            </div>
+                            <div class="flex flex-col items-center lg:items-start">
+                                <div class="text-white font-bold text-lg flex items-center gap-1">
+                                    <i class="fa-solid fa-shield text-sealconBlue-400"></i>
+                                    <span>Spec Standard</span>
+                                </div>
+                                <span class="text-xs text-gray-400">Commercial Grade</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- HERO IMAGE / SUMMARY CARD PREVIEW -->
+                    <div class="lg:col-span-5 relative">
+                        <div class="asphalt-card rounded-2xl p-6 shadow-2xl relative z-10 border border-sealconBlue-500/30">
+                            <div class="flex items-center justify-between border-b border-asphalt-border pb-4 mb-5">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-3 h-3 rounded-full bg-emerald-500 animate-pulse"></div>
+                                    <span class="text-xs font-bold uppercase tracking-wider text-gray-300">Live Network Queue</span>
+                                </div>
+                                <span class="text-xs text-sealconBlue-400 font-mono" id="hero-clock">US-EST :: ONLINE</span>
+                            </div>
+
+                            <!-- MOCK DISPATCH ACTIVITY -->
+                            <div class="space-y-3 font-mono text-xs">
+                                <div class="bg-asphalt-900/80 p-3 rounded-lg border border-asphalt-border flex items-center justify-between">
+                                    <div class="flex items-center gap-2">
+                                        <i class="fa-solid fa-location-dot text-sealconOrange-500"></i>
+                                        <span>Paramus, NJ (07652)</span>
+                                    </div>
+                                    <span class="text-emerald-400 font-bold">Matched Pro #104</span>
+                                </div>
+                                <div class="bg-asphalt-900/80 p-3 rounded-lg border border-asphalt-border flex items-center justify-between">
+                                    <div class="flex items-center gap-2">
+                                        <i class="fa-solid fa-location-dot text-sealconOrange-500"></i>
+                                        <span>Charlotte, NC (28202)</span>
+                                    </div>
+                                    <span class="text-emerald-400 font-bold">Matched Pro #088</span>
+                                </div>
+                                <div class="bg-asphalt-900/80 p-3 rounded-lg border border-asphalt-border flex items-center justify-between">
+                                    <div class="flex items-center gap-2">
+                                        <i class="fa-solid fa-location-dot text-sealconOrange-500"></i>
+                                        <span>Columbus, OH (43215)</span>
+                                    </div>
+                                    <span class="text-emerald-400 font-bold">Matched Pro #219</span>
+                                </div>
+                            </div>
+
+                            <div class="mt-6 pt-4 border-t border-asphalt-border flex items-center justify-between text-xs text-gray-400">
+                                <span>Dispatch Engine: <strong class="text-white">n8n Active</strong></span>
+                                <span class="text-sealconBlue-400 font-semibold"><i class="fa-solid fa-bolt mr-1 text-sealconOrange-500"></i>Avg Match: 2 Mins</span>
+                            </div>
+                        </div>
+
+                        <!-- DECORATIVE BACKING -->
+                        <div class="absolute -inset-2 bg-gradient-to-r from-sealconBlue-500/20 to-sky-500/10 rounded-3xl blur-xl -z-10"></div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- MULTI-STEP DRIVEWAY QUOTE CALCULATOR -->
+        <section id="quote-calculator" class="py-16 bg-asphalt-800/60 border-y border-asphalt-border relative">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-10">
+                    <div class="inline-block bg-sealconBlue-500/10 border border-sealconBlue-500/30 text-sealconBlue-400 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-2">
+                        Instant Pricing Estimator
+                    </div>
+                    <h2 class="font-heading font-black text-3xl sm:text-4xl text-white uppercase">
+                        Calculate Your Paving & Sealcoating Quote
+                    </h2>
+                    <p class="text-gray-400 text-sm mt-2">
+                        Select options below to compare instant sealcoating and replacement paving quotes across 200 to 100,000 sq ft.
+                    </p>
+                </div>
+
+                <!-- CALCULATOR CONTAINER -->
+                <div class="asphalt-card rounded-2xl p-6 sm:p-8 shadow-2xl relative">
+                    
+                    <!-- PROGRESS BAR -->
+                    <div class="mb-8">
+                        <div class="flex justify-between text-xs font-bold text-gray-400 uppercase mb-2">
+                            <span id="step-label">Step 1 of 4: Service & Zip Code</span>
+                            <span id="step-percent" class="text-sealconBlue-400">25% Completed</span>
+                        </div>
+                        <div class="w-full bg-asphalt-900 rounded-full h-2.5 overflow-hidden border border-asphalt-border">
+                            <div id="progress-bar" class="bg-gradient-to-r from-sealconBlue-500 to-sealconBlue-400 h-2.5 rounded-full transition-all duration-300" style="width: 25%"></div>
+                        </div>
+                    </div>
+
+                    <div class="grid lg:grid-cols-12 gap-8">
+                        
+                        <!-- FORM STEPS AREA -->
+                        <div class="lg:col-span-7">
+                            <form id="calc-form" onsubmit="event.preventDefault();">
+                                
+                                <!-- STEP 1: PROPERTY TYPE & ZIP -->
+                                <div id="calc-step-1" class="step-content space-y-6">
+                                    <div>
+                                        <label class="block text-sm font-bold text-gray-200 uppercase tracking-wide mb-3">1. Select Property Type</label>
+                                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                                            <button type="button" onclick="selectPropertyType('residential', this)" class="prop-btn bg-asphalt-900 border-2 border-sealconBlue-500 text-white p-3 rounded-xl text-left hover:border-sealconBlue-500 transition-all">
+                                                <i class="fa-solid fa-house text-sealconBlue-400 text-lg mb-2 block"></i>
+                                                <div class="font-bold text-sm">Residential</div>
+                                                <div class="text-[11px] text-gray-400">Single Family Driveway</div>
+                                            </button>
+                                            <button type="button" onclick="selectPropertyType('commercial', this)" class="prop-btn bg-asphalt-900 border border-asphalt-border text-gray-300 p-3 rounded-xl text-left hover:border-sealconBlue-500 transition-all">
+                                                <i class="fa-solid fa-building text-gray-400 text-lg mb-2 block"></i>
+                                                <div class="font-bold text-sm">Commercial</div>
+                                                <div class="text-[11px] text-gray-400">Parking Lot / Plaza</div>
+                                            </button>
+                                            <button type="button" onclick="selectPropertyType('hoa', this)" class="prop-btn bg-asphalt-900 border border-asphalt-border text-gray-300 p-3 rounded-xl text-left hover:border-sealconBlue-500 transition-all">
+                                                <i class="fa-solid fa-city text-gray-400 text-lg mb-2 block"></i>
+                                                <div class="font-bold text-sm">HOA / Multi</div>
+                                                <div class="text-[11px] text-gray-400">Community Roads</div>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <label class="block text-sm font-bold text-gray-200 uppercase tracking-wide mb-2">2. Enter Property Zip Code</label>
+                                        <div class="relative">
+                                            <i class="fa-solid fa-location-dot absolute left-4 top-3.5 text-sealconOrange-500"></i>
+                                            <input type="text" id="zip-code" maxlength="5" placeholder="e.g. 07652 or 28202" class="w-full bg-asphalt-900 border border-asphalt-border focus:border-sealconBlue-500 rounded-xl py-3 pl-11 pr-4 text-white font-mono placeholder-gray-500 outline-none transition-all" oninput="calculateEstimate()">
+                                        </div>
+                                    </div>
+
+                                    <div class="pt-4 flex justify-end">
+                                        <button type="button" onclick="nextStep(2)" class="bg-sealconBlue-500 hover:bg-sealconBlue-600 text-white font-heading font-extrabold px-6 py-3 rounded-xl text-sm transition-all flex items-center gap-2">
+                                            <span>Continue to Size</span>
+                                            <i class="fa-solid fa-arrow-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- STEP 2: DRIVEWAY / PARKING LOT SIZE ESTIMATOR (UP TO 100K SQ FT) -->
+                                <div id="calc-step-2" class="step-content space-y-6 hidden">
+                                    <div>
+                                        <label class="block text-sm font-bold text-gray-200 uppercase tracking-wide mb-3">Select Property Size Tier</label>
+                                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                                            <button type="button" onclick="selectDrivewaySize(600, 'Residential Standard', this)" class="size-btn bg-asphalt-900 border-2 border-sealconBlue-500 text-white p-3 rounded-xl text-left hover:border-sealconBlue-500 transition-all">
+                                                <div class="text-sealconBlue-400 font-bold text-xs uppercase">Small Residential</div>
+                                                <div class="font-heading font-black text-lg my-1">600 Sq Ft</div>
+                                                <div class="text-[11px] text-gray-400">2-Car Driveway</div>
+                                            </button>
+                                            <button type="button" onclick="selectDrivewaySize(2500, 'Estate / Long Lot', this)" class="size-btn bg-asphalt-900 border border-asphalt-border text-gray-300 p-3 rounded-xl text-left hover:border-sealconBlue-500 transition-all">
+                                                <div class="text-gray-400 font-bold text-xs uppercase">Large Estate</div>
+                                                <div class="font-heading font-black text-lg my-1">2,500 Sq Ft</div>
+                                                <div class="text-[11px] text-gray-400">Long Driveway & Turnaround</div>
+                                            </button>
+                                            <button type="button" onclick="selectDrivewaySize(15000, 'Commercial Plaza', this)" class="size-btn bg-asphalt-900 border border-asphalt-border text-gray-300 p-3 rounded-xl text-left hover:border-sealconBlue-500 transition-all">
+                                                <div class="text-gray-400 font-bold text-xs uppercase">Commercial Lot</div>
+                                                <div class="font-heading font-black text-lg my-1">15,000 Sq Ft</div>
+                                                <div class="text-[11px] text-gray-400">Plaza / Parking Lot Scale</div>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <div class="flex justify-between items-center mb-2">
+                                            <label class="text-sm font-bold text-gray-200 uppercase tracking-wide">Adjust Custom Square Footage (200 - 100,000 Sq Ft)</label>
+                                            <span id="sqft-display" class="font-mono text-sealconBlue-400 font-bold text-sm">600 Sq Ft</span>
+                                        </div>
+                                        <input type="range" id="sqft-slider" min="200" max="100000" step="200" value="600" class="w-full accent-sealconBlue-500 bg-asphalt-900 rounded-lg cursor-pointer h-2" oninput="updateSqFtFromSlider(this.value)">
+                                    </div>
+
+                                    <div class="pt-4 flex justify-between">
+                                        <button type="button" onclick="nextStep(1)" class="bg-asphalt-900 border border-asphalt-border hover:bg-asphalt-700 text-gray-300 px-5 py-3 rounded-xl text-sm transition-all">
+                                            Back
+                                        </button>
+                                        <button type="button" onclick="nextStep(3)" class="bg-sealconBlue-500 hover:bg-sealconBlue-600 text-white font-heading font-extrabold px-6 py-3 rounded-xl text-sm transition-all flex items-center gap-2">
+                                            <span>Continue to Condition</span>
+                                            <i class="fa-solid fa-arrow-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- STEP 3: SURFACE CONDITION -->
+                                <div id="calc-step-3" class="step-content space-y-6 hidden">
+                                    <div>
+                                        <label class="block text-sm font-bold text-gray-200 uppercase tracking-wide mb-3">Current Surface Condition</label>
+                                        <div class="space-y-3">
+                                            <label onclick="selectCondition(1.0, this)" class="cond-option flex items-center justify-between p-3.5 bg-asphalt-900 border-2 border-sealconBlue-500 rounded-xl cursor-pointer hover:border-sealconBlue-500 transition-all">
+                                                <div class="flex items-center gap-3">
+                                                    <input type="radio" name="condition" value="good" checked class="accent-sealconBlue-500">
+                                                    <div>
+                                                        <div class="font-bold text-sm text-white">Good Condition (Routine Maintenance)</div>
+                                                        <div class="text-xs text-gray-400">Fading color, minor wear, standard preventative coating.</div>
+                                                    </div>
+                                                </div>
+                                                <span class="text-xs font-mono bg-asphalt-800 text-gray-300 px-2 py-1 rounded">Standard Rate</span>
+                                            </label>
+
+                                            <label onclick="selectCondition(1.20, this)" class="cond-option flex items-center justify-between p-3.5 bg-asphalt-900 border border-asphalt-border rounded-xl cursor-pointer hover:border-sealconBlue-500 transition-all">
+                                                <div class="flex items-center gap-3">
+                                                    <input type="radio" name="condition" value="moderate" class="accent-sealconBlue-500">
+                                                    <div>
+                                                        <div class="font-bold text-sm text-white">Moderate Cracking & Spiderwebbing</div>
+                                                        <div class="text-xs text-gray-400">Requires hot rubberized crack filling & prep work.</div>
+                                                    </div>
+                                                </div>
+                                                <span class="text-xs font-mono bg-asphalt-800 text-sealconBlue-400 px-2 py-1 rounded">+ Crack Filler</span>
+                                            </label>
+
+                                            <label onclick="selectCondition(1.40, this)" class="cond-option flex items-center justify-between p-3.5 bg-asphalt-900 border border-asphalt-border rounded-xl cursor-pointer hover:border-sealconBlue-500 transition-all">
+                                                <div class="flex items-center gap-3">
+                                                    <input type="radio" name="condition" value="heavy" class="accent-sealconBlue-500">
+                                                    <div>
+                                                        <div class="font-bold text-sm text-white">Heavy Base Failure / Full Replacement Prep</div>
+                                                        <div class="text-xs text-gray-400">Severe alligator cracking. Requires full removal, regrade & new stone base.</div>
+                                                    </div>
+                                                </div>
+                                                <span class="text-xs font-mono bg-asphalt-800 text-sealconOrange-500 px-2 py-1 rounded">Remove & Regrade</span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="pt-4 flex justify-between">
+                                        <button type="button" onclick="nextStep(2)" class="bg-asphalt-900 border border-asphalt-border hover:bg-asphalt-700 text-gray-300 px-5 py-3 rounded-xl text-sm transition-all">
+                                            Back
+                                        </button>
+                                        <button type="button" onclick="nextStep(4)" class="bg-sealconBlue-500 hover:bg-sealconBlue-600 text-white font-heading font-extrabold px-6 py-3 rounded-xl text-sm transition-all flex items-center gap-2">
+                                            <span>Lock In Estimate</span>
+                                            <i class="fa-solid fa-arrow-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- STEP 4: CONTACT & DISPATCH CONTACT -->
+                                <div id="calc-step-4" class="step-content space-y-4 hidden">
+                                    <div>
+                                        <h3 class="font-heading font-bold text-base text-white uppercase mb-1">Final Step: Lock In Estimate & Match Pro</h3>
+                                        <p class="text-xs text-gray-400">Where should our local Sealcon-verified contractor send your detailed quote?</p>
+                                    </div>
+
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                        <div>
+                                            <label class="block text-xs font-bold text-gray-300 uppercase mb-1">Full Name</label>
+                                            <input type="text" id="cust-name" required placeholder="John Doe" class="w-full bg-asphalt-900 border border-asphalt-border focus:border-sealconBlue-500 rounded-lg p-2.5 text-sm text-white outline-none">
+                                        </div>
+                                        <div>
+                                            <label class="block text-xs font-bold text-gray-300 uppercase mb-1">Phone Number (SMS Quote)</label>
+                                            <input type="tel" id="cust-phone" required placeholder="(555) 000-0000" class="w-full bg-asphalt-900 border border-asphalt-border focus:border-sealconBlue-500 rounded-lg p-2.5 text-sm text-white outline-none">
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <label class="block text-xs font-bold text-gray-300 uppercase mb-1">Email Address</label>
+                                        <input type="email" id="cust-email" required placeholder="john@example.com" class="w-full bg-asphalt-900 border border-asphalt-border focus:border-sealconBlue-500 rounded-lg p-2.5 text-sm text-white outline-none">
+                                    </div>
+
+                                    <div>
+                                        <label class="block text-xs font-bold text-gray-300 uppercase mb-1">Street Address</label>
+                                        <input type="text" id="cust-address" required placeholder="123 Main Street" class="w-full bg-asphalt-900 border border-asphalt-border focus:border-sealconBlue-500 rounded-lg p-2.5 text-sm text-white outline-none">
+                                    </div>
+
+                                    <div class="pt-4 flex justify-between items-center">
+                                        <button type="button" onclick="nextStep(3)" class="bg-asphalt-900 border border-asphalt-border hover:bg-asphalt-700 text-gray-300 px-4 py-2.5 rounded-xl text-xs transition-all">
+                                            Back
+                                        </button>
+                                        <button type="button" onclick="submitInquiry()" class="bg-sealconOrange-500 hover:bg-sealconOrange-600 text-white font-heading font-black px-6 py-3.5 rounded-xl text-sm shadow-lg orange-glow transition-all uppercase tracking-wide flex items-center gap-2">
+                                            <i class="fa-solid fa-paper-plane"></i>
+                                            <span>Find Vetted Pro Near Me</span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+
+                        <!-- LIVE DUAL ESTIMATE SUMMARY CARD -->
+                        <div class="lg:col-span-5 border-t lg:border-t-0 lg:border-l border-asphalt-border pt-6 lg:pt-0 lg:pl-8 flex flex-col justify-between">
+                            <div>
+                                <div class="bg-asphalt-900 rounded-xl p-5 border border-sealconBlue-500/30 space-y-4">
+                                    
+                                    <!-- SEALCOATING RANGE -->
+                                    <div>
+                                        <div class="text-[10px] font-bold text-sealconBlue-400 uppercase tracking-widest">Protective Sealcoating Range</div>
+                                        <div id="seal-price-range" class="font-heading font-black text-2xl sm:text-3xl text-white">$210 - $270</div>
+                                        <div class="text-[10px] text-gray-400 mt-0.5" id="seal-rate-note">Scaled rate: $0.45 / sq ft (Standard Residential)</div>
+                                    </div>
+
+                                    <hr class="border-asphalt-border">
+
+                                    <!-- FULL PAVING RANGE ($7 - $14 / SQ FT) -->
+                                    <div>
+                                        <div class="text-[10px] font-bold text-sealconOrange-500 uppercase tracking-widest">Full Replacement Paving Range</div>
+                                        <div id="pave-price-range" class="font-heading font-black text-2xl sm:text-3xl text-white">$4,200 - $8,400</div>
+                                        <div class="text-[10px] text-gray-400 mt-0.5">Remove old asphalt, regrade sub-base, add stone & pave ($7 - $14/sq ft)</div>
+                                    </div>
+
+                                    <hr class="border-asphalt-border">
+
+                                    <div class="space-y-1.5 text-xs">
+                                        <div class="flex justify-between">
+                                            <span class="text-gray-400">Zip Code:</span>
+                                            <span id="summary-zip" class="font-mono text-white font-semibold">Not Set</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span class="text-gray-400">Size Tier:</span>
+                                            <span id="summary-size" class="text-white font-semibold">Residential Standard</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span class="text-gray-400">Square Footage:</span>
+                                            <span id="summary-sqft" class="font-mono text-sealconBlue-400 font-bold">600 sq ft</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span class="text-gray-400">Surface Prep:</span>
+                                            <span id="summary-cond" class="text-white font-semibold">Good (1.0x)</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- NETWORK GUARANTEE BADGE -->
+                                <div class="mt-4 bg-asphalt-900/50 p-4 rounded-xl border border-asphalt-border text-xs space-y-2">
+                                    <div class="flex items-center gap-2 text-white font-bold">
+                                        <i class="fa-solid fa-shield text-sealconOrange-500"></i>
+                                        <span>Proper Construction Guaranteed</span>
+                                    </div>
+                                    <p class="text-gray-400 leading-relaxed text-[11px]">
+                                        We never use cheap overlays. Full asphalt paving replacement includes proper excavation, grading, aggregate stone compaction, and commercial asphalt pouring.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="text-[11px] text-gray-500 mt-4 text-center">
+                                Powered by Sealcon Geo-Indexing Engine
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CONTRACTOR VETTING PIPELINE ENGINE VISUALIZER -->
+        <section id="vetting-standard" class="py-20 bg-asphalt-900 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="font-heading font-black text-3xl sm:text-4xl text-white uppercase tracking-tight">
+                        How We Screen Local Contractors
+                    </h2>
+                    <p class="text-gray-400 text-sm sm:text-base mt-2">
+                        We don't sell your phone number to 10 different spammers. Sealcon runs a strict 4-stage screening protocol before a contractor ever touches your property.
+                    </p>
+                </div>
+
+                <!-- 4-STEP VETTING GRID -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    
+                    <div class="asphalt-card rounded-2xl p-6 relative group border border-asphalt-border hover:border-sealconBlue-500/50 transition-all">
+                        <div class="w-12 h-12 rounded-xl bg-sealconBlue-500/10 border border-sealconBlue-500/30 text-sealconBlue-400 flex items-center justify-center font-heading font-black text-xl mb-4 group-hover:bg-sealconBlue-500 group-hover:text-white transition-all">
+                            01
+                        </div>
+                        <h3 class="font-heading font-bold text-lg text-white uppercase mb-2">Google Star Audit</h3>
+                        <p class="text-gray-400 text-xs leading-relaxed mb-4">
+                            Our API checks local contractor profiles. Only shops with 4.5+ average rating and 10+ authentic reviews qualify for network indexing.
+                        </p>
+                        <div class="text-[11px] font-mono text-emerald-400 flex items-center gap-1.5 bg-asphalt-900 p-2 rounded border border-asphalt-border">
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span>Min 4.5★ Rating Threshold</span>
+                        </div>
+                    </div>
+
+                    <!-- REVISED VETTING STEP 2: MATERIAL & PROCESS -->
+                    <div class="asphalt-card rounded-2xl p-6 relative group border border-asphalt-border hover:border-sealconBlue-500/50 transition-all">
+                        <div class="w-12 h-12 rounded-xl bg-sealconBlue-500/10 border border-sealconBlue-500/30 text-sealconBlue-400 flex items-center justify-center font-heading font-black text-xl mb-4 group-hover:bg-sealconBlue-500 group-hover:text-white transition-all">
+                            02
+                        </div>
+                        <h3 class="font-heading font-bold text-lg text-white uppercase mb-2">Material & Process</h3>
+                        <p class="text-gray-400 text-xs leading-relaxed mb-4">
+                            We consult directly with crews on their application systems, equipment, and work ethic—verifying commercial-grade sealers, hot rubber fillers, sub-base compaction, and proper field application technique.
+                        </p>
+                        <div class="text-[11px] font-mono text-emerald-400 flex items-center gap-1.5 bg-asphalt-900 p-2 rounded border border-asphalt-border">
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span>Equipment & Technique Audit</span>
+                        </div>
+                    </div>
+
+                    <div class="asphalt-card rounded-2xl p-6 relative group border border-asphalt-border hover:border-sealconBlue-500/50 transition-all">
+                        <div class="w-12 h-12 rounded-xl bg-sealconBlue-500/10 border border-sealconBlue-500/30 text-sealconBlue-400 flex items-center justify-center font-heading font-black text-xl mb-4 group-hover:bg-sealconBlue-500 group-hover:text-white transition-all">
+                            03
+                        </div>
+                        <h3 class="font-heading font-bold text-lg text-white uppercase mb-2">Insurance Audit</h3>
+                        <p class="text-gray-400 text-xs leading-relaxed mb-4">
+                            Contractors must upload current General Liability Certificate ($1M minimum coverage). We re-verify active policies quarterly.
+                        </p>
+                        <div class="text-[11px] font-mono text-emerald-400 flex items-center gap-1.5 bg-asphalt-900 p-2 rounded border border-asphalt-border">
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span>$1,000,000 Liability Check</span>
+                        </div>
+                    </div>
+
+                    <div class="asphalt-card rounded-2xl p-6 relative group border border-asphalt-border hover:border-sealconBlue-500/50 transition-all">
+                        <div class="w-12 h-12 rounded-xl bg-sealconBlue-500/10 border border-sealconBlue-500/30 text-sealconBlue-400 flex items-center justify-center font-heading font-black text-xl mb-4 group-hover:bg-sealconBlue-500 group-hover:text-white transition-all">
+                            04
+                        </div>
+                        <h3 class="font-heading font-bold text-lg text-white uppercase mb-2">Automated Geo-Match</h3>
+                        <p class="text-gray-400 text-xs leading-relaxed mb-4">
+                            Our automated dispatch connects your inquiry to the highest-rated active local contractor within a 25-mile radius in under 2 minutes.
+                        </p>
+                        <div class="text-[11px] font-mono text-emerald-400 flex items-center gap-1.5 bg-asphalt-900 p-2 rounded border border-asphalt-border">
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span>Instant SMS Notification</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- WHY SEALCON VALUE PROPOSITION GRID -->
+        <section id="how-it-works" class="py-20 bg-asphalt-800/40 border-t border-asphalt-border">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="font-heading font-black text-3xl sm:text-4xl text-white uppercase">
+                        The Sealcon Advantage
+                    </h2>
+                    <p class="text-gray-400 text-sm mt-2">
+                        Why homeowners and commercial property managers trust Sealcon nationwide.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    
+                    <div class="asphalt-card rounded-2xl p-6 border border-asphalt-border flex flex-col items-start">
+                        <div class="w-12 h-12 rounded-xl bg-sealconBlue-500/10 border border-sealconBlue-500/30 text-sealconBlue-400 flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-road"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-base text-white uppercase mb-2">Paving & Sealcoating</h3>
+                        <p class="text-gray-400 text-xs leading-relaxed">
+                            Full-scope solutions from complete asphalt paving and resurfacing to high-grade protective sealcoating layers.
+                        </p>
+                    </div>
+
+                    <div class="asphalt-card rounded-2xl p-6 border border-asphalt-border flex flex-col items-start">
+                        <div class="w-12 h-12 rounded-xl bg-sealconBlue-500/10 border border-sealconBlue-500/30 text-sealconBlue-400 flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-user-shield"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-base text-white uppercase mb-2">Vetted Local Pros</h3>
+                        <p class="text-gray-400 text-xs leading-relaxed">
+                            No unscreened subcontractors. Work only with established local paving and sealcoating shop owners.
+                        </p>
+                    </div>
+
+                    <div class="asphalt-card rounded-2xl p-6 border border-asphalt-border flex flex-col items-start">
+                        <div class="w-12 h-12 rounded-xl bg-sealconBlue-500/10 border border-sealconBlue-500/30 text-sealconBlue-400 flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-bolt text-sealconOrange-500"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-base text-white uppercase mb-2">Fast Quotes & Scheduling</h3>
+                        <p class="text-gray-400 text-xs leading-relaxed">
+                            Skip leaving voicemails with 5 contractors. Get an instant estimate and match with local crews in minutes.
+                        </p>
+                    </div>
+
+                    <div class="asphalt-card rounded-2xl p-6 border border-asphalt-border flex flex-col items-start">
+                        <div class="w-12 h-12 rounded-xl bg-sealconBlue-500/10 border border-sealconBlue-500/30 text-sealconBlue-400 flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-award"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-base text-white uppercase mb-2">Workmanship Guarantee</h3>
+                        <p class="text-gray-400 text-xs leading-relaxed">
+                            Every Sealcon network project comes backed by a 1-year workmanship warranty for peace of mind.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CONTRACTOR ONBOARDING PORTAL SECTION -->
+        <section id="for-contractors" class="py-20 bg-asphalt-900 border-t border-asphalt-border relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="asphalt-card rounded-3xl p-8 sm:p-12 border border-sealconBlue-500/30 shadow-2xl bg-gradient-to-br from-asphalt-800 to-asphalt-900">
+                    <div class="grid lg:grid-cols-12 gap-10 items-center">
+                        
+                        <div class="lg:col-span-7 space-y-6">
+                            <div class="inline-block bg-sealconBlue-500 text-white font-heading font-black text-xs px-3 py-1 rounded-full uppercase tracking-wider">
+                                Contractor Partner Portal
+                            </div>
+                            <h2 class="font-heading font-black text-3xl sm:text-5xl text-white uppercase leading-tight">
+                                Are You a Top-Rated Local Paving & Sealcoating Pro?
+                            </h2>
+                            <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
+                                Join the Sealcon Asphalt nationwide network. Get high-intent driveway paving, site prep, and sealcoating leads delivered directly to your phone in your zip code territory.
+                            </p>
+
+                            <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                                <div class="flex items-center gap-3 bg-asphalt-900/80 p-3 rounded-xl border border-asphalt-border">
+                                    <i class="fa-solid fa-check text-sealconBlue-400 text-lg"></i>
+                                    <span class="text-xs font-bold text-gray-200">Exclusive Local Territory Leads</span>
+                                </div>
+                                <div class="flex items-center gap-3 bg-asphalt-900/80 p-3 rounded-xl border border-asphalt-border">
+                                    <i class="fa-solid fa-check text-sealconBlue-400 text-lg"></i>
+                                    <span class="text-xs font-bold text-gray-200">Zero Monthly Subscription Fees</span>
+                                </div>
+                                <div class="flex items-center gap-3 bg-asphalt-900/80 p-3 rounded-xl border border-asphalt-border">
+                                    <i class="fa-solid fa-check text-sealconBlue-400 text-lg"></i>
+                                    <span class="text-xs font-bold text-gray-200">Instant SMS Dispatch Alert</span>
+                                </div>
+                                <div class="flex items-center gap-3 bg-asphalt-900/80 p-3 rounded-xl border border-asphalt-border">
+                                    <i class="fa-solid fa-check text-sealconBlue-400 text-lg"></i>
+                                    <span class="text-xs font-bold text-gray-200">You Keep 100% Customer Contact</span>
+                                </div>
+                            </div>
+
+                            <div class="pt-4">
+                                <button onclick="openContractorModal()" class="bg-sealconOrange-500 hover:bg-sealconOrange-600 text-white font-heading font-black px-8 py-4 rounded-xl text-base shadow-lg orange-glow transition-all uppercase tracking-wide inline-flex items-center gap-3">
+                                    <i class="fa-solid fa-id-card"></i>
+                                    <span>Apply to Join Network</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- CONTRACTOR BENCHMARK STATS -->
+                        <div class="lg:col-span-5 bg-asphalt-900 rounded-2xl p-6 border border-asphalt-border space-y-4">
+                            <h3 class="font-heading font-bold text-sm uppercase text-gray-300 border-b border-asphalt-border pb-3">
+                                Network Partner Standard
+                            </h3>
+
+                            <div class="space-y-3 font-mono text-xs">
+                                <div class="flex justify-between items-center bg-asphalt-800 p-3 rounded-lg">
+                                    <span class="text-gray-400">Min. Google Rating:</span>
+                                    <span class="text-sealconBlue-400 font-bold">4.5 Stars</span>
+                                </div>
+                                <div class="flex justify-between items-center bg-asphalt-800 p-3 rounded-lg">
+                                    <span class="text-gray-400">Gen Liability Policy:</span>
+                                    <span class="text-white font-bold">$1M Active</span>
+                                </div>
+                                <div class="flex justify-between items-center bg-asphalt-800 p-3 rounded-lg">
+                                    <span class="text-gray-400">Paving Workmanship:</span>
+                                    <span class="text-white font-bold">Full Sub-Base Prep</span>
+                                </div>
+                                <div class="flex justify-between items-center bg-asphalt-800 p-3 rounded-lg">
+                                    <span class="text-gray-400">Response Window:</span>
+                                    <span class="text-emerald-400 font-bold">Under 24 Hours</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NATIONWIDE COVERAGE MAP & TESTIMONIALS -->
+        <section id="coverage-map" class="py-20 bg-asphalt-800/30 border-t border-asphalt-border">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="grid lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- COVERAGE SEARCH -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <div class="inline-block bg-sealconBlue-500/10 border border-sealconBlue-500/30 text-sealconBlue-400 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                            Interactive Network Radius
+                        </div>
+                        <h2 class="font-heading font-black text-3xl sm:text-4xl text-white uppercase">
+                            Check Sealcon Service In Your State
+                        </h2>
+                        <p class="text-gray-400 text-sm">
+                            We index active contractors in major metro and suburban markets across the US. Enter your state or zip code below to verify current network coverage.
+                        </p>
+
+                        <!-- STATE SEARCH SELECTOR -->
+                        <div class="space-y-3">
+                            <div class="relative">
+                                <i class="fa-solid fa-search absolute left-4 top-3.5 text-gray-400"></i>
+                                <input type="text" id="state-search" placeholder="Type State (e.g. New Jersey, Ohio, Texas)..." class="w-full bg-asphalt-900 border border-asphalt-border focus:border-sealconBlue-500 rounded-xl py-3 pl-11 pr-4 text-white text-sm outline-none" onkeyup="filterStates()">
+                            </div>
+
+                            <div id="state-list" class="max-h-48 overflow-y-auto space-y-1.5 pr-2 font-mono text-xs">
+                                <!-- DYNAMIC STATES FILLED VIA JS -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TESTIMONIAL CARDS -->
+                    <div class="lg:col-span-7 space-y-4" id="reviews">
+                        <h3 class="font-heading font-bold text-lg text-white uppercase mb-4 flex items-center gap-2">
+                            <i class="fa-solid fa-comments text-sealconBlue-400"></i>
+                            <span>Recent Homeowner Experience</span>
+                        </h3>
+
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            
+                            <div class="asphalt-card rounded-xl p-5 border border-asphalt-border">
+                                <div class="flex text-sealconOrange-500 text-xs gap-1 mb-2">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <p class="text-gray-300 text-xs italic mb-3">
+                                    "Sealcon matched us with a contractor in Paramus within 10 minutes. They brushed on commercial grade sealer, edged everything cleanly, and saved my 4-car driveway!"
+                                </p>
+                                <div class="text-xs font-bold text-white">— Marcus T., Paramus NJ</div>
+                            </div>
+
+                            <div class="asphalt-card rounded-xl p-5 border border-asphalt-border">
+                                <div class="flex text-sealconOrange-500 text-xs gap-1 mb-2">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <p class="text-gray-300 text-xs italic mb-3">
+                                    "I was skeptical about finding good pavement pros online. Sealcon's replacement paving estimate was spot on and the crew removed old asphalt and regraded stone properly."
+                                </p>
+                                <div class="text-xs font-bold text-white">— Sarah K., Charlotte NC</div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-asphalt-900 border-t border-asphalt-border pt-12 pb-8 text-xs text-gray-400">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                
+                <div class="space-y-3">
+                    <div class="flex items-center gap-2">
+                        <div class="w-7 h-7 bg-sealconBlue-500 rounded font-heading font-black text-white flex items-center justify-center text-base">S</div>
+                        <span class="font-heading font-black text-white text-lg tracking-wider">SEALCON<span class="text-sealconOrange-500">.US</span></span>
+                    </div>
+                    <p class="text-gray-400 text-xs leading-relaxed">
+                        America's driveway paving and sealcoating network. Connecting verified local pavement professionals with homeowners nationwide.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-heading font-bold text-white uppercase mb-3">Navigation</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#quote-calculator" class="hover:text-sealconBlue-400 transition-colors">Instant Quote Calculator</a></li>
+                        <li><a href="#vetting-standard" class="hover:text-sealconBlue-400 transition-colors">Contractor Vetting Standard</a></li>
+                        <li><a href="#how-it-works" class="hover:text-sealconBlue-400 transition-colors">How It Works</a></li>
+                        <li><a href="#for-contractors" class="hover:text-sealconBlue-400 transition-colors">Contractor Portal</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-heading font-bold text-white uppercase mb-3">Legal & Safety</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-sealconBlue-400 transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-sealconBlue-400 transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-sealconBlue-400 transition-colors">Contractor Compliance</a></li>
+                        <li><a href="#" class="hover:text-sealconBlue-400 transition-colors">1-Year Warranty Details</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-heading font-bold text-white uppercase mb-3">System Operations</h4>
+                    <div class="bg-asphalt-800 p-3 rounded-lg border border-asphalt-border space-y-2 font-mono">
+                        <div class="flex justify-between items-center text-[11px]">
+                            <span>Automation Engine:</span>
+                            <span class="text-emerald-400 font-bold">n8n Online</span>
+                        </div>
+                        <div class="flex justify-between items-center text-[11px]">
+                            <span>Google API Status:</span>
+                            <span class="text-emerald-400 font-bold">Connected</span>
+                        </div>
+                        <div class="flex justify-between items-center text-[11px]">
+                            <span>SMS Dispatch:</span>
+                            <span class="text-emerald-400 font-bold">Twilio Ready</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="border-t border-asphalt-border/60 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p>&copy; 2026 Sealcon Asphalt (Sealcon.us). All rights reserved.</p>
+                <div class="flex items-center gap-4">
+                    <span class="text-sealconBlue-400"><i class="fa-solid fa-shield text-sealconOrange-500"></i> Asphalt Protection Network</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CONTRACTOR ONBOARDING MODAL -->
+    <div id="contractor-modal" class="fixed inset-0 z-50 bg-asphalt-900/90 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="asphalt-card max-w-lg w-full rounded-2xl p-6 sm:p-8 border border-sealconBlue-500/40 relative shadow-2xl">
+            <button onclick="closeContractorModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-lg">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="mb-6">
+                <div class="inline-block bg-sealconBlue-500 text-white font-bold text-[10px] px-2.5 py-0.5 rounded uppercase mb-2">Partner Application</div>
+                <h3 class="font-heading font-black text-2xl text-white uppercase">Join Sealcon Network</h3>
+                <p class="text-xs text-gray-400 mt-1">Submit your business details. Our automated screening engine will verify your Google rating and liability insurance.</p>
+            </div>
+
+            <form onsubmit="submitContractorApp(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-gray-300 uppercase mb-1">Company / Business Name</label>
+                    <input type="text" required placeholder="e.g. Apex Asphalt & Paving LLC" class="w-full bg-asphalt-900 border border-asphalt-border focus:border-sealconBlue-500 rounded-lg p-2.5 text-sm text-white outline-none">
+                </div>
+
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-300 uppercase mb-1">Owner Name</label>
+                        <input type="text" required placeholder="Owner Full Name" class="w-full bg-asphalt-900 border border-asphalt-border focus:border-sealconBlue-500 rounded-lg p-2.5 text-sm text-white outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-300 uppercase mb-1">Mobile (SMS Dispatch)</label>
+                        <input type="tel" required placeholder="(555) 000-0000" class="w-full bg-asphalt-900 border border-asphalt-border focus:border-sealconBlue-500 rounded-lg p-2.5 text-sm text-white outline-none">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-gray-300 uppercase mb-1">Google Maps Profile URL</label>
+                    <input type="url" required placeholder="https://maps.google.com/?cid=..." class="w-full bg-asphalt-900 border border-asphalt-border focus:border-sealconBlue-500 rounded-lg p-2.5 text-sm text-white outline-none">
+                </div>
+
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-300 uppercase mb-1">Base Zip Code</label>
+                        <input type="text" required placeholder="Zip Code" maxlength="5" class="w-full bg-asphalt-900 border border-asphalt-border focus:border-sealconBlue-500 rounded-lg p-2.5 text-sm text-white outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-300 uppercase mb-1">Service Radius (Miles)</label>
+                        <select class="w-full bg-asphalt-900 border border-asphalt-border focus:border-sealconBlue-500 rounded-lg p-2.5 text-sm text-white outline-none">
+                            <option value="15">15 Miles</option>
+                            <option value="25" selected>25 Miles</option>
+                            <option value="50">50 Miles</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="pt-2">
+                    <button type="submit" class="w-full bg-sealconOrange-500 hover:bg-sealconOrange-600 text-white font-heading font-black py-3 rounded-xl text-sm shadow-lg orange-glow transition-all uppercase tracking-wide">
+                        Submit Contractor Application
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- INQUIRY CONFIRMATION SUCCESS MODAL -->
+    <div id="success-modal" class="fixed inset-0 z-50 bg-asphalt-900/90 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="asphalt-card max-w-md w-full rounded-2xl p-6 text-center border border-emerald-500/40 relative shadow-2xl">
+            <div class="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-3xl mx-auto mb-4 border border-emerald-500/30">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h3 class="font-heading font-black text-2xl text-white uppercase">Inquiry Dispatched!</h3>
+            <p class="text-xs text-gray-300 mt-2 leading-relaxed">
+                We are geo-indexing local contractors near <strong id="confirm-zip" class="text-sealconBlue-400">Zip</strong>. A Sealcon-verified pro will reach out via SMS/Phone with your detailed estimate shortly.
+            </p>
+            <div class="my-4 bg-asphalt-900 p-3 rounded-xl border border-asphalt-border text-xs text-left space-y-1 font-mono">
+                <div class="text-gray-400">Sealcoating Estimate: <span id="confirm-seal-price" class="text-sealconBlue-400 font-bold">$0</span></div>
+                <div class="text-gray-400">Replacement Paving Estimate: <span id="confirm-pave-price" class="text-sealconOrange-500 font-bold">$0</span></div>
+                <div class="text-gray-400">Status: <span class="text-emerald-400">Dispatched to Local Pro Queue</span></div>
+            </div>
+            <button onclick="closeSuccessModal()" class="w-full bg-asphalt-800 hover:bg-asphalt-700 text-white font-bold py-2.5 rounded-xl text-xs border border-asphalt-border transition-all">
+                Close & Return
+            </button>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT CALCULATOR ENGINE -->
+    <script>
+        const calcState = {
+            step: 1,
+            propertyType: 'residential',
+            zip: '',
+            sizeSqFt: 600,
+            sizeLabel: 'Residential Standard',
+            conditionMult: 1.0,
+            conditionLabel: 'Good (1.0x)'
+        };
+
+        const statesData = [
+            { name: 'New Jersey (NJ)', activePros: 42, status: 'Active Network' },
+            { name: 'North Carolina (NC)', activePros: 38, status: 'Active Network' },
+            { name: 'Ohio (OH)', activePros: 29, status: 'Active Network' },
+            { name: 'Pennsylvania (PA)', activePros: 35, status: 'Active Network' },
+            { name: 'Virginia (VA)', activePros: 24, status: 'Active Network' },
+            { name: 'Florida (FL)', activePros: 51, status: 'Active Network' },
+            { name: 'Texas (TX)', activePros: 47, status: 'Active Network' },
+            { name: 'Georgia (GA)', activePros: 22, status: 'Active Network' }
+        ];
+
+        window.onload = function() {
+            renderStateList(statesData);
+            calculateEstimate();
+        };
+
+        function renderStateList(data) {
+            const container = document.getElementById('state-list');
+            container.innerHTML = '';
+            data.forEach(st => {
+                const div = document.createElement('div');
+                div.className = 'flex justify-between items-center bg-asphalt-900 p-2.5 rounded border border-asphalt-border hover:border-sealconBlue-500/40 transition-colors';
+                div.innerHTML = `
+                    <span class="text-gray-200 font-medium">${st.name}</span>
+                    <span class="text-emerald-400 font-bold">${st.activePros} Active Pros</span>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        function filterStates() {
+            const query = document.getElementById('state-search').value.toLowerCase();
+            const filtered = statesData.filter(s => s.name.toLowerCase().includes(query));
+            renderStateList(filtered);
+        }
+
+        function nextStep(stepNum) {
+            calcState.step = stepNum;
+            for (let i = 1; i <= 4; i++) {
+                document.getElementById(`calc-step-${i}`).classList.add('hidden');
+            }
+            document.getElementById(`calc-step-${stepNum}`).classList.remove('hidden');
+
+            const percent = stepNum * 25;
+            document.getElementById('progress-bar').style.width = `${percent}%`;
+            document.getElementById('step-percent').innerText = `${percent}% Completed`;
+
+            const labels = [
+                'Step 1 of 4: Service & Zip Code',
+                'Step 2 of 4: Size Estimator (200 - 100k Sq Ft)',
+                'Step 3 of 4: Surface Condition Prep',
+                'Step 4 of 4: Final Contact Details'
+            ];
+            document.getElementById('step-label').innerText = labels[stepNum - 1];
+        }
+
+        function selectPropertyType(type, element) {
+            calcState.propertyType = type;
+            document.querySelectorAll('.prop-btn').forEach(btn => {
+                btn.classList.remove('border-2', 'border-sealconBlue-500', 'text-white');
+                btn.classList.add('border-asphalt-border', 'text-gray-300');
+            });
+            element.classList.remove('border-asphalt-border', 'text-gray-300');
+            element.classList.add('border-2', 'border-sealconBlue-500', 'text-white');
+
+            calculateEstimate();
+        }
+
+        function selectDrivewaySize(sqft, label, element) {
+            calcState.sizeSqFt = sqft;
+            calcState.sizeLabel = label;
+
+            document.querySelectorAll('.size-btn').forEach(btn => {
+                btn.classList.remove('border-2', 'border-sealconBlue-500', 'text-white');
+                btn.classList.add('border-asphalt-border', 'text-gray-300');
+            });
+            element.classList.remove('border-asphalt-border', 'text-gray-300');
+            element.classList.add('border-2', 'border-sealconBlue-500', 'text-white');
+
+            document.getElementById('sqft-slider').value = sqft;
+            document.getElementById('sqft-display').innerText = `${sqft.toLocaleString()} Sq Ft`;
+            
+            calculateEstimate();
+        }
+
+        function updateSqFtFromSlider(val) {
+            calcState.sizeSqFt = parseInt(val);
+            calcState.sizeLabel = `${parseInt(val).toLocaleString()} Sq Ft Custom`;
+            document.getElementById('sqft-display').innerText = `${parseInt(val).toLocaleString()} Sq Ft`;
+            calculateEstimate();
+        }
+
+        function selectCondition(mult, element) {
+            calcState.conditionMult = mult;
+            if (mult === 1.0) calcState.conditionLabel = 'Good (1.0x)';
+            else if (mult === 1.2) calcState.conditionLabel = 'Moderate Crack Fill (1.2x)';
+            else calcState.conditionLabel = 'Remove & Regrade (1.4x)';
+
+            document.querySelectorAll('.cond-option').forEach(opt => {
+                opt.classList.remove('border-2', 'border-sealconBlue-500');
+                opt.classList.add('border-asphalt-border');
+            });
+            element.classList.remove('border-asphalt-border');
+            element.classList.add('border-2', 'border-sealconBlue-500');
+
+            calculateEstimate();
+        }
+
+        function calculateEstimate() {
+            const zipInput = document.getElementById('zip-code').value.trim();
+            calcState.zip = zipInput || 'Not Set';
+            const sqft = calcState.sizeSqFt;
+
+            let baseSealRate = 0.45;
+            if (sqft > 1000) {
+                const scaleFactor = Math.min((sqft - 1000) / 49000, 1);
+                baseSealRate = 0.45 - (scaleFactor * 0.23); 
+            }
+            if (calcState.propertyType === 'commercial' && baseSealRate > 0.25) {
+                baseSealRate = 0.22;
+            }
+
+            const sealBase = sqft * baseSealRate * calcState.conditionMult;
+            const sealMin = Math.round(sealBase * 0.90);
+            const sealMax = Math.round(sealBase * 1.15);
+
+            let paveMinRate = 7.00;
+            let paveMaxRate = 14.00;
+            if (sqft > 5000) {
+                paveMinRate = 6.00;
+                paveMaxRate = 11.00;
+            }
+
+            const paveMin = Math.round(sqft * paveMinRate);
+            const paveMax = Math.round(sqft * paveMaxRate * calcState.conditionMult);
+
+            document.getElementById('seal-price-range').innerText = `$${sealMin.toLocaleString()} - $${sealMax.toLocaleString()}`;
+            document.getElementById('pave-price-range').innerText = `$${paveMin.toLocaleString()} - $${paveMax.toLocaleString()}`;
+            document.getElementById('seal-rate-note').innerText = `Scaled rate: $${baseSealRate.toFixed(2)} / sq ft (${calcState.propertyType === 'commercial' ? 'Commercial' : 'Residential'})`;
+
+            document.getElementById('summary-zip').innerText = calcState.zip;
+            document.getElementById('summary-size').innerText = calcState.sizeLabel;
+            document.getElementById('summary-sqft').innerText = `${sqft.toLocaleString()} sq ft`;
+            document.getElementById('summary-cond').innerText = calcState.conditionLabel;
+        }
+
+        function submitInquiry() {
+            const name = document.getElementById('cust-name').value;
+            const phone = document.getElementById('cust-phone').value;
+            const email = document.getElementById('cust-email').value;
+
+            if (!name || !phone || !email) {
+                alert("Please fill in your name, phone, and email address.");
+                return;
+            }
+
+            document.getElementById('confirm-zip').innerText = calcState.zip;
+            document.getElementById('confirm-seal-price').innerText = document.getElementById('seal-price-range').innerText;
+            document.getElementById('confirm-pave-price').innerText = document.getElementById('pave-price-range').innerText;
+            document.getElementById('success-modal').classList.remove('hidden');
+        }
+
+        function closeSuccessModal() {
+            document.getElementById('success-modal').classList.add('hidden');
+            nextStep(1);
+        }
+
+        function openContractorModal() {
+            document.getElementById('contractor-modal').classList.remove('hidden');
+        }
+
+        function closeContractorModal() {
+            document.getElementById('contractor-modal').classList.add('hidden');
+        }
+
+        function submitContractorApp(e) {
+            e.preventDefault();
+            alert("Contractor Application Received! Our vetting engine will verify your Google Maps profile and contact you within 24 hours.");
+            closeContractorModal();
+        }
+    </script>
+</body>
+</html>
