@@ -1163,6 +1163,11 @@
     const sealVal = document.getElementById('seal-price-range')?.innerText || document.getElementById('confirm-seal-price')?.innerText || '$0';
     const paveVal = document.getElementById('pave-price-range')?.innerText || document.getElementById('confirm-pave-price')?.innerText || '$0';
 
+    const sqftVal = window.leadData?.sqft || '1000';
+    const zipVal = window.leadData?.zip || '07461';
+    const sealVal = window.leadData?.sealcoatingEstimate || '$0';
+    const paveVal = window.leadData?.replacementEstimate || '$0';
+
     const clientPayload = {
         name: name,
         phone: phone,
