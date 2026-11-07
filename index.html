@@ -1155,43 +1155,27 @@
         return;
     }
 
-    // Declared exactly once
-    const sqftVal = window.leadData?.sqft 
-        || document.getElementById('summary-sqft')?.innerText 
-        || document.getElementById('sqft')?.value 
-        || '1000';
+    // Check inputs first, then summary screens as fallbacks
+    const sqftVal = document.getElementById('sqft')?.value || document.getElementById('sqftInput')?.value || document.getElementById('summary-sqft')?.innerText || document.querySelector('input[name="sqft"]')?.value || '1000';
+    const zipVal = document.getElementById('zip')?.value || document.getElementById('zipInput')?.value || document.getElementById('summary-zip')?.innerText || document.getElementById('calc-zip')?.value || document.querySelector('input[name="zip"]')?.value || '07461';
 
-    const zipVal = window.leadData?.zip 
-        || document.getElementById('summary-zip')?.innerText 
-        || document.getElementById('calc-zip')?.value 
-        || document.getElementById('zip')?.value 
-        || document.querySelector('input[placeholder*="Zip"]')?.value 
-        || document.querySelector('input[placeholder*="Address"]')?.value 
-        || '';
+    // Grab the exact price ranges calculated on screen
+    const sealVal = document.getElementById('seal-price-range')?.innerText || document.getElementById('confirm-seal-price')?.innerText || '$0';
+    const paveVal = document.getElementById('pave-price-range')?.innerText || document.getElementById('confirm-pave-price')?.innerText || '$0';
 
-    const sealVal = window.leadData?.sealcoatingEstimate 
-        || document.getElementById('seal-price-range')?.innerText 
-        || document.getElementById('confirm-seal-price')?.innerText 
-        || '$0';
-
-    const paveVal = window.leadData?.replacementEstimate 
-        || document.getElementById('pave-price-range')?.innerText 
-        || document.getElementById('confirm-pave-price')?.innerText 
-        || '$0';
+    const sqftVal = window.leadData?.sqft || '1000';
+    const zipVal = window.leadData?.zip || '07461';
+    const sealVal = window.leadData?.sealcoatingEstimate || '$0';
+    const paveVal = window.leadData?.replacementEstimate || '$0';
 
     const clientPayload = {
         name: name,
         phone: phone,
         email: email,
         sqft: sqftVal,
-        address: zipVal,
-        zip: zipVal,
         zipCode: zipVal,
-        zipcode: zipVal,
         sealcoatingEstimate: sealVal,
-        sealEstimate: sealVal,
         replacementEstimate: paveVal,
-        paveEstimate: paveVal,
         submittedAt: new Date().toISOString()
     };
 
