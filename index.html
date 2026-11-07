@@ -1155,11 +1155,13 @@
         return;
     }
 
-    // Pull directly from the active calculation display elements on the screen
+    // Check inputs first, then summary screens as fallbacks
+    const sqftVal = document.getElementById('sqft')?.value || document.getElementById('sqftInput')?.value || document.getElementById('summary-sqft')?.innerText || document.querySelector('input[name="sqft"]')?.value || '1000';
+    const zipVal = document.getElementById('zip')?.value || document.getElementById('zipInput')?.value || document.getElementById('summary-zip')?.innerText || document.getElementById('calc-zip')?.value || document.querySelector('input[name="zip"]')?.value || '07461';
+
+    // Grab the exact price ranges calculated on screen
     const sealVal = document.getElementById('seal-price-range')?.innerText || document.getElementById('confirm-seal-price')?.innerText || '$0';
     const paveVal = document.getElementById('pave-price-range')?.innerText || document.getElementById('confirm-pave-price')?.innerText || '$0';
-    const sqftVal = document.getElementById('summary-sqft')?.innerText || document.getElementById('sqft')?.value || document.getElementById('sqftInput')?.value || '1000';
-    const zipVal = document.getElementById('summary-zip')?.innerText || document.getElementById('calc-zip')?.value || document.getElementById('zip')?.value || document.getElementById('confirm-zip')?.innerText || '07461';
 
     const clientPayload = {
         name: name,
@@ -1183,19 +1185,12 @@
     .then(response => response.json())
     .then(data => {
         console.log('Client lead dispatched to n8n:', data);
-        
-        // Populate the success modal text dynamically
-        const modalSeal = document.getElementById('confirm-seal-price');
-        if (modalSeal) modalSeal.innerText = sealVal;
-        
-        const modalPave = document.getElementById('confirm-pave-price');
-        if (modalPave) modalPave.innerText = paveVal;
-
         const successModal = document.getElementById('success-modal');
         if (successModal) successModal.classList.remove('hidden');
     })
     .catch(error => console.error('Webhook error:', error));
 }
+
 
         function closeSuccessModal() {
             document.getElementById('success-modal').classList.add('hidden');
