@@ -1146,7 +1146,7 @@ function submitInquiry() {
     document.getElementById('confirm-seal-price').innerText = ...
     document.getElementById('confirm-pave-price').innerText = ...
 
-    // --- PASTE YOUR WEBHOOK PAYLOAD HERE ---
+
     const clientPayload = {
         name: name,
         phone: phone,
@@ -1168,7 +1168,6 @@ function submitInquiry() {
     .then(response => response.json())
     .then(data => console.log('Client lead dispatched to n8n:', data))
     .catch(error => console.error('Webhook error:', error));
-    // ----------------------------------------
 
     document.getElementById('success-modal').classList.remove('hidden'); // (or whatever your modal toggle is)
 }
